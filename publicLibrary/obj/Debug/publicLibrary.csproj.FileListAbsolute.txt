@@ -1,0 +1,8 @@
+F:\Programming\C#\School Project - Public Library\publicLibrary\publicLibrary\bin\Debug\publicLibrary.exe.config
+F:\Programming\C#\School Project - Public Library\publicLibrary\publicLibrary\bin\Debug\publicLibrary.exe
+F:\Programming\C#\School Project - Public Library\publicLibrary\publicLibrary\bin\Debug\publicLibrary.pdb
+F:\Programming\C#\School Project - Public Library\publicLibrary\publicLibrary\obj\Debug\publicLibrary.csprojResolveAssemblyReference.cache
+F:\Programming\C#\School Project - Public Library\publicLibrary\publicLibrary\obj\Debug\publicLibrary.Properties.Resources.resources
+F:\Programming\C#\School Project - Public Library\publicLibrary\publicLibrary\obj\Debug\publicLibrary.csproj.GenerateResource.Cache
+F:\Programming\C#\School Project - Public Library\publicLibrary\publicLibrary\obj\Debug\publicLibrary.exe
+F:\Programming\C#\School Project - Public Library\publicLibrary\publicLibrary\obj\Debug\publicLibrary.pdb
