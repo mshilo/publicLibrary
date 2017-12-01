@@ -9,8 +9,16 @@ using System.Windows.Forms;
 
 namespace publicLibrary
 {
-    class DbMain
+    abstract class DbMain
     {
+        public abstract void    Insert<Titem>(Titem i) where Titem : BaseItem;
+        public abstract void    Delete (int id);
+        public abstract void    Update<Titem> (Titem i) where Titem : BaseItem;
+        public abstract DataSet GetInfo (int id);
+        public abstract DataSet GetInfo (string name);
+        public abstract bool    Found (int id);
+        public abstract bool    Found (string name);
+
         private OleDbConnection cnn = new OleDbConnection();
         private OleDbCommand cmd = new OleDbCommand();
         private DataSet ds = new DataSet();

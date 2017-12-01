@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace publicLibrary
 {
-    class Author
+    class Author : BaseItem
     {
     }
 }
