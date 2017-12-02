@@ -8,5 +8,6 @@ namespace publicLibrary
 {
     class Author : BaseItem
     {
+        public Author() { }
     }
 }

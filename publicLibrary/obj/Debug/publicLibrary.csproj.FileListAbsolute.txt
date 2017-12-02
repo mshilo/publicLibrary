@@ -6,3 +6,15 @@ F:\Programming\C#\School Project - Public Library\publicLibrary\publicLibrary\ob
 F:\Programming\C#\School Project - Public Library\publicLibrary\publicLibrary\obj\Debug\publicLibrary.csproj.GenerateResource.Cache
 F:\Programming\C#\School Project - Public Library\publicLibrary\publicLibrary\obj\Debug\publicLibrary.exe
 F:\Programming\C#\School Project - Public Library\publicLibrary\publicLibrary\obj\Debug\publicLibrary.pdb
+C:\Users\Maxim Shilo\Documents\C# projects\publicLibrary\publicLibrary\bin\Debug\access\LibraryDatabase.accdb
+C:\Users\Maxim Shilo\Documents\C# projects\publicLibrary\publicLibrary\bin\Debug\publicLibrary.exe.config
+C:\Users\Maxim Shilo\Documents\C# projects\publicLibrary\publicLibrary\bin\Debug\publicLibrary.exe
+C:\Users\Maxim Shilo\Documents\C# projects\publicLibrary\publicLibrary\bin\Debug\publicLibrary.pdb
+C:\Users\Maxim Shilo\Documents\C# projects\publicLibrary\publicLibrary\obj\Debug\publicLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Maxim Shilo\Documents\C# projects\publicLibrary\publicLibrary\obj\Debug\publicLibrary.MainForm.resources
+C:\Users\Maxim Shilo\Documents\C# projects\publicLibrary\publicLibrary\obj\Debug\publicLibrary.Properties.Resources.resources
+C:\Users\Maxim Shilo\Documents\C# projects\publicLibrary\publicLibrary\obj\Debug\publicLibrary.csproj.GenerateResource.Cache
+C:\Users\Maxim Shilo\Documents\C# projects\publicLibrary\publicLibrary\obj\Debug\publicLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Maxim Shilo\Documents\C# projects\publicLibrary\publicLibrary\obj\Debug\publicLibrary.exe
+C:\Users\Maxim Shilo\Documents\C# projects\publicLibrary\publicLibrary\obj\Debug\publicLibrary.pdb
+C:\Users\Maxim Shilo\Documents\C# projects\publicLibrary\publicLibrary\obj\Debug\publicLibrary.DatabaseForm.resources

@@ -8,5 +8,13 @@ namespace publicLibrary
 {
     class Worker : BaseItem
     {
+        public string Password { get; set; }
+        public int Rank { get; set; }
+        public string Address { get; set; }
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
+        public DateTime StartDate { get; set; }
+
+        public Worker() { }
     }
 }

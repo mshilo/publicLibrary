@@ -16,5 +16,11 @@ namespace publicLibrary
         {
             InitializeComponent();
         }
+
+        private void launchDatabaseFormButton_Click(object sender, EventArgs e)
+        {
+            DatabaseForm dbForm = new DatabaseForm();
+            dbForm.Show();
+        }
     }
 }

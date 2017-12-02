@@ -19,13 +19,15 @@ namespace publicLibrary
         public abstract bool    Found (int id);
         public abstract bool    Found (string name);
 
+        public BaseItem Item { get; set; }
+
         private OleDbConnection cnn = new OleDbConnection();
         private OleDbCommand cmd = new OleDbCommand();
         private DataSet ds = new DataSet();
 
         public DbMain()
         {
-            cnn.ConnectionString = "Provider= Microsoft.ACE.OLEDB.12.0;Data Source=..\\access\\LibraryDatabase.accdb ;Persist Security Info=False";
+            cnn.ConnectionString = "Provider= Microsoft.ACE.OLEDB.12.0;Data Source=..\\..\\access\\LibraryDatabase.accdb ;Persist Security Info=False";
         }
 
         public DataSet GetAllRecord(string tableName)
