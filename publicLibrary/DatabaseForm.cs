@@ -13,6 +13,7 @@ namespace publicLibrary
     public partial class DatabaseForm : Form
     {
         DbAuthors authors = new DbAuthors();
+        DbItems items = new DbItems();
 
         TextBox[] authorsInput = new TextBox[2];
 
@@ -27,6 +28,16 @@ namespace publicLibrary
 
         private void DatabaseForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'libraryDatabaseDataSet.Workers' table. You can move, or remove it, as needed.
+            this.workersTableAdapter.Fill(this.libraryDatabaseDataSet.Workers);
+            // TODO: This line of code loads data into the 'libraryDatabaseDataSet.Subscribers' table. You can move, or remove it, as needed.
+            this.subscribersTableAdapter.Fill(this.libraryDatabaseDataSet.Subscribers);
+            // TODO: This line of code loads data into the 'libraryDatabaseDataSet.Publishers' table. You can move, or remove it, as needed.
+            this.publishersTableAdapter.Fill(this.libraryDatabaseDataSet.Publishers);
+            // TODO: This line of code loads data into the 'libraryDatabaseDataSet.Lends' table. You can move, or remove it, as needed.
+            this.lendsTableAdapter.Fill(this.libraryDatabaseDataSet.Lends);
+            // TODO: This line of code loads data into the 'libraryDatabaseDataSet.Items' table. You can move, or remove it, as needed.
+            this.itemsTableAdapter.Fill(this.libraryDatabaseDataSet.Items);
             // TODO: This line of code loads data into the 'libraryDatabaseDataSet.Authors' table. You can move, or remove it, as needed.
             this.authorsTableAdapter.Fill(this.libraryDatabaseDataSet.Authors);
         }
@@ -83,6 +94,7 @@ namespace publicLibrary
         #endregion
 
         #region AUTHORS
+        // add/update
         private void authorsSubmit1_Click(object sender, EventArgs e)
         {
             Author a = new Author();
@@ -93,17 +105,39 @@ namespace publicLibrary
 
             authorsRefreshDataGridView();
         }
-
+        // delete
+        private void authorsSubmit2_Click(object sender, EventArgs e)
+        {
+            authors.Delete(int.Parse(DELauthorIdTextBox.Text));
+            authorsRefreshDataGridView();
+        }
+        // refresh grid
         public void authorsRefreshDataGridView()
         {
             dataGridView1.DataSource = authors.GetAllRecord("AUTHORS").Tables[0];
         }
-
+        // textbox autocomplete
         private void authorIdTextBox_Leave(object sender, EventArgs e)
         {
             TextBoxLeave(authors, authorsInput[0], authorsInput);
         }
         #endregion
 
+        private void itemsSubmit1_Click(object sender, EventArgs e)
+        {
+            Item i = new Item();
+            i.Id = int.Parse(itemIdTextBox.Text);
+            i.Name = itemNameTextBox.Text;
+            i.Count = int.Parse(itemCountTextBox.Text);
+            i.AllowedLendDays = int.Parse(itemDaysTextBox.Text);
+            i.PublisherId = int.Parse(itemPublisherIdTextBox.Text);
+            i.AuthorId = int.Parse(itemAuthorIdTextBox.Text);
+            i.Genre = itemGenreTextBox.Text;
+            i.Language = itemLanguageTextBox.Text;
+
+            items.Insert(i);
+
+            itemsDataGridView.DataSource = items.GetAllRecord("ITEMS").Tables[0];
+        }
     }
 }

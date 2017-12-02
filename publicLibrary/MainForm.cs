@@ -20,6 +20,7 @@ namespace publicLibrary
         private void launchDatabaseFormButton_Click(object sender, EventArgs e)
         {
             DatabaseForm dbForm = new DatabaseForm();
+            Item i = new Item();
             dbForm.Show();
         }
     }

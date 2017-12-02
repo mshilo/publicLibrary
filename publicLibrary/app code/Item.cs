@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace publicLibrary
 {
-    class Item : BaseItem
+    public class Item : BaseItem
     {
         public int Count { get; set; }
         public int AllowedLendDays { get; set; }

@@ -10,7 +10,7 @@ namespace publicLibrary
 {
     class DbAuthors : DbMain
     {
-        public override void Insert<Author> (Author a)
+        public override void Insert<Titem> (Titem a)
         {
             string sql = string.Format("INSERT INTO Authors(authorId, authorName) VALUES ('{0}', '{1}')", a.Id, a.Name);
             base.Update(sql);
@@ -18,12 +18,14 @@ namespace publicLibrary
 
         public override void Update<Author> (Author a)
         {
-
+            string sql = string.Format("UPDATE Authors SET authorName='{0}' WHERE authorId={1}", a.Name, a.Id);
+            base.Update(sql);
         }
 
         public override void Delete (int id)
         {
-
+            string sql = string.Format("DELETE FROM Authors WHERE authorId={0}", id);
+            base.Update(sql);
         }
 
         public override bool Found(int id)
