@@ -16,7 +16,7 @@ namespace publicLibrary
             base.Update(sql);
         }
 
-        public override void Update<Author> (Author a)
+        public override void Update<Titem> (Titem a)
         {
             string sql = string.Format("UPDATE Authors SET authorName='{0}' WHERE authorId={1}", a.Name, a.Id);
             base.Update(sql);

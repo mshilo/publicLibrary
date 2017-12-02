@@ -35,7 +35,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.DELauthorIdTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.authorsDataGridView = new System.Windows.Forms.DataGridView();
             this.authorIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.authorNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.authorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -95,7 +95,7 @@
             this.label24 = new System.Windows.Forms.Label();
             this.DELlendIdTextBox = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.lendsDataGridView = new System.Windows.Forms.DataGridView();
             this.lendIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subscriberIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -119,7 +119,7 @@
             this.label34 = new System.Windows.Forms.Label();
             this.DELpublisherIdTextBox = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.publishersDataGridView = new System.Windows.Forms.DataGridView();
             this.publisherIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.publisherNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.publisherAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -142,7 +142,7 @@
             this.label41 = new System.Windows.Forms.Label();
             this.DELsubscriberIdTextBox = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.subscribersDataGridView = new System.Windows.Forms.DataGridView();
             this.subscriberIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subscriberNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subscriberAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -177,7 +177,7 @@
             this.label49 = new System.Windows.Forms.Label();
             this.DELworkersIdTextBox = new System.Windows.Forms.TextBox();
             this.label50 = new System.Windows.Forms.Label();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.workersDataGridView = new System.Windows.Forms.DataGridView();
             this.workersSubmit1 = new System.Windows.Forms.Button();
             this.label51 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
@@ -195,7 +195,7 @@
             this.workerStartDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             authorsTab = new System.Windows.Forms.TabPage();
             authorsTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.authorsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.authorsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDatabaseDataSet)).BeginInit();
             this.databaseTabControl.SuspendLayout();
@@ -203,16 +203,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.itemsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsBindingSource)).BeginInit();
             this.lendsTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lendsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lendsBindingSource)).BeginInit();
             this.publishersTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.publishersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.publishersBindingSource)).BeginInit();
             this.subscribersTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subscribersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.subscribersBindingSource)).BeginInit();
             this.workersTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -223,7 +223,7 @@
             authorsTab.Controls.Add(this.label6);
             authorsTab.Controls.Add(this.DELauthorIdTextBox);
             authorsTab.Controls.Add(this.label3);
-            authorsTab.Controls.Add(this.dataGridView1);
+            authorsTab.Controls.Add(this.authorsDataGridView);
             authorsTab.Controls.Add(this.authorsSubmit1);
             authorsTab.Controls.Add(this.label2);
             authorsTab.Controls.Add(this.label1);
@@ -281,18 +281,18 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "ADD / UPDATE";
             // 
-            // dataGridView1
+            // authorsDataGridView
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.authorsDataGridView.AutoGenerateColumns = false;
+            this.authorsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.authorsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.authorIdDataGridViewTextBoxColumn,
             this.authorNameDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.authorsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(176, 43);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(843, 317);
-            this.dataGridView1.TabIndex = 5;
+            this.authorsDataGridView.DataSource = this.authorsBindingSource;
+            this.authorsDataGridView.Location = new System.Drawing.Point(176, 43);
+            this.authorsDataGridView.Name = "authorsDataGridView";
+            this.authorsDataGridView.Size = new System.Drawing.Size(843, 317);
+            this.authorsDataGridView.TabIndex = 5;
             // 
             // authorIdDataGridViewTextBoxColumn
             // 
@@ -519,6 +519,7 @@
             this.itemsSubmit2.TabIndex = 22;
             this.itemsSubmit2.Text = "submit";
             this.itemsSubmit2.UseVisualStyleBackColor = true;
+            this.itemsSubmit2.Click += new System.EventHandler(this.itemsSubmit2_Click);
             // 
             // label7
             // 
@@ -658,6 +659,7 @@
             this.itemIdTextBox.Name = "itemIdTextBox";
             this.itemIdTextBox.Size = new System.Drawing.Size(100, 20);
             this.itemIdTextBox.TabIndex = 13;
+            this.itemIdTextBox.Leave += new System.EventHandler(this.itemIdTextBox_Leave);
             // 
             // lendsTab
             // 
@@ -676,7 +678,7 @@
             this.lendsTab.Controls.Add(this.label24);
             this.lendsTab.Controls.Add(this.DELlendIdTextBox);
             this.lendsTab.Controls.Add(this.label25);
-            this.lendsTab.Controls.Add(this.dataGridView3);
+            this.lendsTab.Controls.Add(this.lendsDataGridView);
             this.lendsTab.Controls.Add(this.lendsSubmit1);
             this.lendsTab.Controls.Add(this.label26);
             this.lendsTab.Controls.Add(this.label27);
@@ -787,6 +789,7 @@
             this.lendsSubmit2.TabIndex = 45;
             this.lendsSubmit2.Text = "submit";
             this.lendsSubmit2.UseVisualStyleBackColor = true;
+            this.lendsSubmit2.Click += new System.EventHandler(this.lendsSubmit2_Click);
             // 
             // label24
             // 
@@ -813,11 +816,11 @@
             this.label25.TabIndex = 42;
             this.label25.Text = "ADD / UPDATE";
             // 
-            // dataGridView3
+            // lendsDataGridView
             // 
-            this.dataGridView3.AutoGenerateColumns = false;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.lendsDataGridView.AutoGenerateColumns = false;
+            this.lendsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.lendsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.lendIdDataGridViewTextBoxColumn,
             this.subscriberIdDataGridViewTextBoxColumn,
             this.workerIdDataGridViewTextBoxColumn,
@@ -825,11 +828,11 @@
             this.itemQuantityDataGridViewTextBoxColumn,
             this.lendStartDateDataGridViewTextBoxColumn,
             this.lendFinishDateDataGridViewTextBoxColumn});
-            this.dataGridView3.DataSource = this.lendsBindingSource;
-            this.dataGridView3.Location = new System.Drawing.Point(176, 43);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(843, 317);
-            this.dataGridView3.TabIndex = 41;
+            this.lendsDataGridView.DataSource = this.lendsBindingSource;
+            this.lendsDataGridView.Location = new System.Drawing.Point(176, 43);
+            this.lendsDataGridView.Name = "lendsDataGridView";
+            this.lendsDataGridView.Size = new System.Drawing.Size(843, 317);
+            this.lendsDataGridView.TabIndex = 41;
             // 
             // lendIdDataGridViewTextBoxColumn
             // 
@@ -886,6 +889,7 @@
             this.lendsSubmit1.TabIndex = 40;
             this.lendsSubmit1.Text = "submit";
             this.lendsSubmit1.UseVisualStyleBackColor = true;
+            this.lendsSubmit1.Click += new System.EventHandler(this.lendsSubmit1_Click);
             // 
             // label26
             // 
@@ -918,6 +922,7 @@
             this.lendIdTextBox.Name = "lendIdTextBox";
             this.lendIdTextBox.Size = new System.Drawing.Size(100, 20);
             this.lendIdTextBox.TabIndex = 36;
+            this.lendIdTextBox.Leave += new System.EventHandler(this.lendIdTextBox_Leave);
             // 
             // publishersTab
             // 
@@ -930,7 +935,7 @@
             this.publishersTab.Controls.Add(this.label34);
             this.publishersTab.Controls.Add(this.DELpublisherIdTextBox);
             this.publishersTab.Controls.Add(this.label35);
-            this.publishersTab.Controls.Add(this.dataGridView4);
+            this.publishersTab.Controls.Add(this.publishersDataGridView);
             this.publishersTab.Controls.Add(this.publishersSubmit1);
             this.publishersTab.Controls.Add(this.label36);
             this.publishersTab.Controls.Add(this.label37);
@@ -993,6 +998,7 @@
             this.publishersSubmit2.TabIndex = 45;
             this.publishersSubmit2.Text = "submit";
             this.publishersSubmit2.UseVisualStyleBackColor = true;
+            this.publishersSubmit2.Click += new System.EventHandler(this.publishersSubmit2_Click);
             // 
             // label34
             // 
@@ -1019,20 +1025,20 @@
             this.label35.TabIndex = 42;
             this.label35.Text = "ADD / UPDATE";
             // 
-            // dataGridView4
+            // publishersDataGridView
             // 
-            this.dataGridView4.AutoGenerateColumns = false;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.publishersDataGridView.AutoGenerateColumns = false;
+            this.publishersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.publishersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.publisherIdDataGridViewTextBoxColumn1,
             this.publisherNameDataGridViewTextBoxColumn,
             this.publisherAddressDataGridViewTextBoxColumn,
             this.publisherContactDataGridViewTextBoxColumn});
-            this.dataGridView4.DataSource = this.publishersBindingSource;
-            this.dataGridView4.Location = new System.Drawing.Point(176, 43);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(843, 317);
-            this.dataGridView4.TabIndex = 41;
+            this.publishersDataGridView.DataSource = this.publishersBindingSource;
+            this.publishersDataGridView.Location = new System.Drawing.Point(176, 43);
+            this.publishersDataGridView.Name = "publishersDataGridView";
+            this.publishersDataGridView.Size = new System.Drawing.Size(843, 317);
+            this.publishersDataGridView.TabIndex = 41;
             // 
             // publisherIdDataGridViewTextBoxColumn1
             // 
@@ -1071,6 +1077,7 @@
             this.publishersSubmit1.TabIndex = 40;
             this.publishersSubmit1.Text = "submit";
             this.publishersSubmit1.UseVisualStyleBackColor = true;
+            this.publishersSubmit1.Click += new System.EventHandler(this.publishersSubmit1_Click);
             // 
             // label36
             // 
@@ -1103,6 +1110,7 @@
             this.publisherIdTextBox.Name = "publisherIdTextBox";
             this.publisherIdTextBox.Size = new System.Drawing.Size(100, 20);
             this.publisherIdTextBox.TabIndex = 36;
+            this.publisherIdTextBox.Leave += new System.EventHandler(this.publisherIdTextBox_Leave);
             // 
             // subscribersTab
             // 
@@ -1117,7 +1125,7 @@
             this.subscribersTab.Controls.Add(this.label41);
             this.subscribersTab.Controls.Add(this.DELsubscriberIdTextBox);
             this.subscribersTab.Controls.Add(this.label42);
-            this.subscribersTab.Controls.Add(this.dataGridView5);
+            this.subscribersTab.Controls.Add(this.subscribersDataGridView);
             this.subscribersTab.Controls.Add(this.subscribersSubmit1);
             this.subscribersTab.Controls.Add(this.label43);
             this.subscribersTab.Controls.Add(this.label44);
@@ -1196,6 +1204,7 @@
             this.subscribersSubmit2.TabIndex = 45;
             this.subscribersSubmit2.Text = "submit";
             this.subscribersSubmit2.UseVisualStyleBackColor = true;
+            this.subscribersSubmit2.Click += new System.EventHandler(this.subscribersSubmit2_Click);
             // 
             // label41
             // 
@@ -1222,21 +1231,21 @@
             this.label42.TabIndex = 42;
             this.label42.Text = "ADD / UPDATE";
             // 
-            // dataGridView5
+            // subscribersDataGridView
             // 
-            this.dataGridView5.AutoGenerateColumns = false;
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.subscribersDataGridView.AutoGenerateColumns = false;
+            this.subscribersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.subscribersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.subscriberIdDataGridViewTextBoxColumn1,
             this.subscriberNameDataGridViewTextBoxColumn,
             this.subscriberAddressDataGridViewTextBoxColumn,
             this.subscriberPhoneDataGridViewTextBoxColumn,
             this.subscriberEmailDataGridViewTextBoxColumn});
-            this.dataGridView5.DataSource = this.subscribersBindingSource;
-            this.dataGridView5.Location = new System.Drawing.Point(176, 43);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.Size = new System.Drawing.Size(843, 317);
-            this.dataGridView5.TabIndex = 41;
+            this.subscribersDataGridView.DataSource = this.subscribersBindingSource;
+            this.subscribersDataGridView.Location = new System.Drawing.Point(176, 43);
+            this.subscribersDataGridView.Name = "subscribersDataGridView";
+            this.subscribersDataGridView.Size = new System.Drawing.Size(843, 317);
+            this.subscribersDataGridView.TabIndex = 41;
             // 
             // subscriberIdDataGridViewTextBoxColumn1
             // 
@@ -1281,6 +1290,7 @@
             this.subscribersSubmit1.TabIndex = 40;
             this.subscribersSubmit1.Text = "submit";
             this.subscribersSubmit1.UseVisualStyleBackColor = true;
+            this.subscribersSubmit1.Click += new System.EventHandler(this.subscribersSubmit1_Click);
             // 
             // label43
             // 
@@ -1313,6 +1323,7 @@
             this.subscriberIdTextBox.Name = "subscriberIdTextBox";
             this.subscriberIdTextBox.Size = new System.Drawing.Size(100, 20);
             this.subscriberIdTextBox.TabIndex = 36;
+            this.subscriberIdTextBox.Leave += new System.EventHandler(this.subscriberIdTextBox_Leave);
             // 
             // authorsTableAdapter
             // 
@@ -1353,7 +1364,7 @@
             this.workersTab.Controls.Add(this.label49);
             this.workersTab.Controls.Add(this.DELworkersIdTextBox);
             this.workersTab.Controls.Add(this.label50);
-            this.workersTab.Controls.Add(this.dataGridView6);
+            this.workersTab.Controls.Add(this.workersDataGridView);
             this.workersTab.Controls.Add(this.workersSubmit1);
             this.workersTab.Controls.Add(this.label51);
             this.workersTab.Controls.Add(this.label52);
@@ -1480,6 +1491,7 @@
             this.workersSubmit2.TabIndex = 45;
             this.workersSubmit2.Text = "submit";
             this.workersSubmit2.UseVisualStyleBackColor = true;
+            this.workersSubmit2.Click += new System.EventHandler(this.workersSubmit2_Click);
             // 
             // label49
             // 
@@ -1506,11 +1518,11 @@
             this.label50.TabIndex = 42;
             this.label50.Text = "ADD / UPDATE";
             // 
-            // dataGridView6
+            // workersDataGridView
             // 
-            this.dataGridView6.AutoGenerateColumns = false;
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.workersDataGridView.AutoGenerateColumns = false;
+            this.workersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.workersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.workerIdDataGridViewTextBoxColumn1,
             this.workerNameDataGridViewTextBoxColumn,
             this.workerPasswordDataGridViewTextBoxColumn,
@@ -1519,11 +1531,11 @@
             this.workerEmailDataGridViewTextBoxColumn,
             this.workerPhoneDataGridViewTextBoxColumn,
             this.workerStartDateDataGridViewTextBoxColumn});
-            this.dataGridView6.DataSource = this.workersBindingSource;
-            this.dataGridView6.Location = new System.Drawing.Point(176, 43);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.Size = new System.Drawing.Size(843, 317);
-            this.dataGridView6.TabIndex = 41;
+            this.workersDataGridView.DataSource = this.workersBindingSource;
+            this.workersDataGridView.Location = new System.Drawing.Point(176, 43);
+            this.workersDataGridView.Name = "workersDataGridView";
+            this.workersDataGridView.Size = new System.Drawing.Size(843, 317);
+            this.workersDataGridView.TabIndex = 41;
             // 
             // workersSubmit1
             // 
@@ -1533,6 +1545,7 @@
             this.workersSubmit1.TabIndex = 40;
             this.workersSubmit1.Text = "submit";
             this.workersSubmit1.UseVisualStyleBackColor = true;
+            this.workersSubmit1.Click += new System.EventHandler(this.workersSubmit1_Click);
             // 
             // label51
             // 
@@ -1565,6 +1578,7 @@
             this.workerIdTextBox.Name = "workerIdTextBox";
             this.workerIdTextBox.Size = new System.Drawing.Size(100, 20);
             this.workerIdTextBox.TabIndex = 36;
+            this.workerIdTextBox.Leave += new System.EventHandler(this.workerIdTextBox_Leave);
             // 
             // workersBindingSource
             // 
@@ -1629,12 +1643,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1048, 406);
             this.Controls.Add(this.databaseTabControl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "DatabaseForm";
             this.Text = "Database";
             this.Load += new System.EventHandler(this.DatabaseForm_Load);
             authorsTab.ResumeLayout(false);
             authorsTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.authorsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.authorsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDatabaseDataSet)).EndInit();
             this.databaseTabControl.ResumeLayout(false);
@@ -1644,19 +1659,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.itemsBindingSource)).EndInit();
             this.lendsTab.ResumeLayout(false);
             this.lendsTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lendsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lendsBindingSource)).EndInit();
             this.publishersTab.ResumeLayout(false);
             this.publishersTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.publishersDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.publishersBindingSource)).EndInit();
             this.subscribersTab.ResumeLayout(false);
             this.subscribersTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subscribersDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.subscribersBindingSource)).EndInit();
             this.workersTab.ResumeLayout(false);
             this.workersTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workersDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.workersBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -1671,7 +1686,7 @@
         private System.Windows.Forms.Button authorsSubmit1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView authorsDataGridView;
         private LibraryDatabaseDataSet libraryDatabaseDataSet;
         private System.Windows.Forms.BindingSource authorsBindingSource;
         private LibraryDatabaseDataSetTableAdapters.AuthorsTableAdapter authorsTableAdapter;
@@ -1731,7 +1746,7 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox DELlendIdTextBox;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView lendsDataGridView;
         private System.Windows.Forms.Button lendsSubmit1;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
@@ -1756,7 +1771,7 @@
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.TextBox DELpublisherIdTextBox;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridView publishersDataGridView;
         private System.Windows.Forms.Button publishersSubmit1;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label37;
@@ -1780,7 +1795,7 @@
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.TextBox DELsubscriberIdTextBox;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.DataGridView subscribersDataGridView;
         private System.Windows.Forms.Button subscribersSubmit1;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label44;
@@ -1810,7 +1825,7 @@
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.TextBox DELworkersIdTextBox;
         private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.DataGridView dataGridView6;
+        private System.Windows.Forms.DataGridView workersDataGridView;
         private System.Windows.Forms.Button workersSubmit1;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label52;
