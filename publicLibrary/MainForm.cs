@@ -17,8 +17,6 @@ namespace publicLibrary
         public MainForm()
         {
             InitializeComponent();
-            ActiveForm.Left = 0;
-            ActiveForm.Top = 0;
         }
 
         private void launchDatabaseFormButton_Click(object sender, EventArgs e)
