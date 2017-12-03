@@ -52,5 +52,16 @@ namespace publicLibrary
         {
             return new DataSet();
         }
+
+        public string LogIn(string password)
+        {
+            DataSet ds = new DataSet();
+            string sql = string.Format("SELECT * FROM Workers WHERE workerPassword='{0}'", password);
+            ds = base.GetQuery(sql);
+            if (0 != ds.Tables[0].Rows.Count)
+                return ds.Tables[0].Rows[0][1].ToString();
+            else
+                return "invalid password";
+        }
     }
 }

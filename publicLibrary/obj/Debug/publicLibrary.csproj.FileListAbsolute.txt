@@ -29,3 +29,4 @@ F:\Programming\C#\publicLibrary\publicLibrary\obj\Debug\publicLibrary.Properties
 F:\Programming\C#\publicLibrary\publicLibrary\obj\Debug\publicLibrary.csproj.GenerateResource.Cache
 F:\Programming\C#\publicLibrary\publicLibrary\obj\Debug\publicLibrary.exe
 F:\Programming\C#\publicLibrary\publicLibrary\obj\Debug\publicLibrary.pdb
+C:\Users\Maxim Shilo\Documents\C# projects\publicLibrary\publicLibrary\obj\Debug\publicLibrary.WorkForm.resources

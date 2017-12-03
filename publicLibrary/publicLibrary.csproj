@@ -99,6 +99,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="WorkForm.resx">
+      <DependentUpon>WorkForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="LibraryDatabaseDataSet.xsc">
       <DependentUpon>LibraryDatabaseDataSet.xsd</DependentUpon>
     </None>

@@ -12,9 +12,13 @@ namespace publicLibrary
 {
     public partial class MainForm : Form
     {
+        DbWorkers db = new DbWorkers();
+
         public MainForm()
         {
             InitializeComponent();
+            ActiveForm.Left = 0;
+            ActiveForm.Top = 0;
         }
 
         private void launchDatabaseFormButton_Click(object sender, EventArgs e)
@@ -22,6 +26,17 @@ namespace publicLibrary
             DatabaseForm dbForm = new DatabaseForm();
             Item i = new Item();
             dbForm.Show();
+        }
+
+        private void logInButton_Click(object sender, EventArgs e)
+        {
+            string s = workerPasswordTextBox.Text;
+            if (db.LogIn(s) != "invalid password")
+            {
+                nameLabel.Text = "welcome " + db.LogIn(s);
+                workerPasswordTextBox.Enabled = false;
+                logInButton.Enabled = false;
+            }
         }
     }
 }
