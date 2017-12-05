@@ -37,7 +37,7 @@ namespace publicLibrary
 
         public override bool Found(string name)
         {
-            return false;
+            return (0 != this.GetInfo(name).Tables[0].Rows.Count);
         }
 
         public override DataSet GetInfo(int id)
@@ -50,7 +50,17 @@ namespace publicLibrary
 
         public override DataSet GetInfo(string name)
         {
-            return new DataSet();
+            DataSet ds = new DataSet();
+            string sql = string.Format("SELECT * FROM Items WHERE itemName='{0}'", name);
+            ds = GetQuery(sql);
+            return ds;
+        }
+
+        public void UpdateStock (int id, int quantity)
+        {
+            quantity = (int)this.GetInfo(id).Tables[0].Rows[0].ItemArray[2] - quantity;
+            string sql = string.Format("UPDATE Items SET itemCount={0} WHERE itemId={1}", quantity, id);
+            base.Update(sql);
         }
     }
 }

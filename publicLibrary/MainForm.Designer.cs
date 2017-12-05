@@ -53,6 +53,7 @@
             this.launchWorkFormButton.TabIndex = 1;
             this.launchWorkFormButton.Text = "work form";
             this.launchWorkFormButton.UseVisualStyleBackColor = true;
+            this.launchWorkFormButton.Click += new System.EventHandler(this.launchWorkFormButton_Click);
             // 
             // logInButton
             // 

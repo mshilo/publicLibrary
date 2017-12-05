@@ -31,10 +31,17 @@ namespace publicLibrary
             string s = workerPasswordTextBox.Text;
             if (db.LogIn(s) != "invalid password")
             {
+                Program.WorkerName = db.LogIn(s);
                 nameLabel.Text = "welcome " + db.LogIn(s);
                 workerPasswordTextBox.Enabled = false;
                 logInButton.Enabled = false;
             }
+        }
+
+        private void launchWorkFormButton_Click(object sender, EventArgs e)
+        {
+            WorkForm wForm = new WorkForm();
+            wForm.Show();
         }
     }
 }

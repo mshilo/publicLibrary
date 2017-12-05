@@ -50,7 +50,10 @@ namespace publicLibrary
 
         public override DataSet GetInfo(string name)
         {
-            return new DataSet();
+            DataSet ds = new DataSet();
+            string sql = string.Format("SELECT * FROM Subscribers WHERE subscriberName='{0}'", name);
+            ds = GetQuery(sql);
+            return ds;
         }
     }
 }
