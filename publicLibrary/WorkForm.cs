@@ -12,17 +12,18 @@ namespace publicLibrary
 {
     public partial class WorkForm : Form
     {
+
+        // TODO: put a dataGridView with the Lends table sorted by closest date in the VIEW LENDS tab 
+
         DbItems items = new DbItems();
         DbWorkers workers = new DbWorkers();
         DbSubscribers subscribers = new DbSubscribers();
         DbLends lends = new DbLends();
-        //List<string[]> itemsList;
         List<Lend> lendsList;
 
         public WorkForm()
         {
             InitializeComponent();
-            itemsList = new List<string[]>();
             lendsList = new List<Lend>();
         }
 
@@ -47,7 +48,8 @@ namespace publicLibrary
                 {
                     int lendId = 0;
                     if (lends.GetAllRecord("LENDS").Tables[0] != null)
-                        lendId = lends.GetAllRecord("LENDS").Tables[0].Rows.Count;
+                        lendId = lends.GetAllRecord("LENDS").Tables[0].Rows.Count + lendsList.Count;
+
                     lendsList.Add(
                         new Lend()
                         {
@@ -92,7 +94,9 @@ namespace publicLibrary
                 items.UpdateStock(item.ItemId, item.ItemQuantity);
             }
 
-            // TODO: Clear out input and listView
+            subscriberNameTextBox.Text = "";
+            itemsListView.Items.Clear();
+            itemsListView.Refresh();
 
             MessageBox.Show("DONE");
         }

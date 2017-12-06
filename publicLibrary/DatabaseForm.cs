@@ -334,8 +334,12 @@ namespace publicLibrary
         {
             TextBoxLeave(workers, workersInput[0], workersInput);
         }
+
         #endregion
 
-
+        private void refreshLendDataGridViewButton_Click(object sender, EventArgs e)
+        {
+            lendsRefreshDataGridView();
+        }
     }
 }

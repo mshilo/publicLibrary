@@ -154,11 +154,6 @@
             this.label44 = new System.Windows.Forms.Label();
             this.subscriberNameTextBox = new System.Windows.Forms.TextBox();
             this.subscriberIdTextBox = new System.Windows.Forms.TextBox();
-            this.authorsTableAdapter = new publicLibrary.LibraryDatabaseDataSetTableAdapters.AuthorsTableAdapter();
-            this.itemsTableAdapter = new publicLibrary.LibraryDatabaseDataSetTableAdapters.ItemsTableAdapter();
-            this.lendsTableAdapter = new publicLibrary.LibraryDatabaseDataSetTableAdapters.LendsTableAdapter();
-            this.publishersTableAdapter = new publicLibrary.LibraryDatabaseDataSetTableAdapters.PublishersTableAdapter();
-            this.subscribersTableAdapter = new publicLibrary.LibraryDatabaseDataSetTableAdapters.SubscribersTableAdapter();
             this.workersTab = new System.Windows.Forms.TabPage();
             this.label17 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
@@ -178,13 +173,6 @@
             this.DELworkersIdTextBox = new System.Windows.Forms.TextBox();
             this.label50 = new System.Windows.Forms.Label();
             this.workersDataGridView = new System.Windows.Forms.DataGridView();
-            this.workersSubmit1 = new System.Windows.Forms.Button();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.workerNameTextBox = new System.Windows.Forms.TextBox();
-            this.workerIdTextBox = new System.Windows.Forms.TextBox();
-            this.workersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.workersTableAdapter = new publicLibrary.LibraryDatabaseDataSetTableAdapters.WorkersTableAdapter();
             this.workerIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workerPasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -193,6 +181,19 @@
             this.workerEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workerPhoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workerStartDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.workersSubmit1 = new System.Windows.Forms.Button();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.workerNameTextBox = new System.Windows.Forms.TextBox();
+            this.workerIdTextBox = new System.Windows.Forms.TextBox();
+            this.authorsTableAdapter = new publicLibrary.LibraryDatabaseDataSetTableAdapters.AuthorsTableAdapter();
+            this.itemsTableAdapter = new publicLibrary.LibraryDatabaseDataSetTableAdapters.ItemsTableAdapter();
+            this.lendsTableAdapter = new publicLibrary.LibraryDatabaseDataSetTableAdapters.LendsTableAdapter();
+            this.publishersTableAdapter = new publicLibrary.LibraryDatabaseDataSetTableAdapters.PublishersTableAdapter();
+            this.subscribersTableAdapter = new publicLibrary.LibraryDatabaseDataSetTableAdapters.SubscribersTableAdapter();
+            this.workersTableAdapter = new publicLibrary.LibraryDatabaseDataSetTableAdapters.WorkersTableAdapter();
+            this.refreshLendDataGridViewButton = new System.Windows.Forms.Button();
             authorsTab = new System.Windows.Forms.TabPage();
             authorsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.authorsDataGridView)).BeginInit();
@@ -663,6 +664,7 @@
             // 
             // lendsTab
             // 
+            this.lendsTab.Controls.Add(this.refreshLendDataGridViewButton);
             this.lendsTab.Controls.Add(this.label18);
             this.lendsTab.Controls.Add(this.lendEndDateTextBox);
             this.lendsTab.Controls.Add(this.label19);
@@ -1325,26 +1327,6 @@
             this.subscriberIdTextBox.TabIndex = 36;
             this.subscriberIdTextBox.Leave += new System.EventHandler(this.subscriberIdTextBox_Leave);
             // 
-            // authorsTableAdapter
-            // 
-            this.authorsTableAdapter.ClearBeforeFill = true;
-            // 
-            // itemsTableAdapter
-            // 
-            this.itemsTableAdapter.ClearBeforeFill = true;
-            // 
-            // lendsTableAdapter
-            // 
-            this.lendsTableAdapter.ClearBeforeFill = true;
-            // 
-            // publishersTableAdapter
-            // 
-            this.publishersTableAdapter.ClearBeforeFill = true;
-            // 
-            // subscribersTableAdapter
-            // 
-            this.subscribersTableAdapter.ClearBeforeFill = true;
-            // 
             // workersTab
             // 
             this.workersTab.Controls.Add(this.label17);
@@ -1537,58 +1519,6 @@
             this.workersDataGridView.Size = new System.Drawing.Size(843, 317);
             this.workersDataGridView.TabIndex = 41;
             // 
-            // workersSubmit1
-            // 
-            this.workersSubmit1.Location = new System.Drawing.Point(70, 251);
-            this.workersSubmit1.Name = "workersSubmit1";
-            this.workersSubmit1.Size = new System.Drawing.Size(100, 23);
-            this.workersSubmit1.TabIndex = 40;
-            this.workersSubmit1.Text = "submit";
-            this.workersSubmit1.UseVisualStyleBackColor = true;
-            this.workersSubmit1.Click += new System.EventHandler(this.workersSubmit1_Click);
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(31, 72);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(33, 13);
-            this.label51.TabIndex = 39;
-            this.label51.Text = "name";
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(49, 46);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(15, 13);
-            this.label52.TabIndex = 38;
-            this.label52.Text = "id";
-            // 
-            // workerNameTextBox
-            // 
-            this.workerNameTextBox.Location = new System.Drawing.Point(70, 69);
-            this.workerNameTextBox.Name = "workerNameTextBox";
-            this.workerNameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.workerNameTextBox.TabIndex = 37;
-            // 
-            // workerIdTextBox
-            // 
-            this.workerIdTextBox.Location = new System.Drawing.Point(70, 43);
-            this.workerIdTextBox.Name = "workerIdTextBox";
-            this.workerIdTextBox.Size = new System.Drawing.Size(100, 20);
-            this.workerIdTextBox.TabIndex = 36;
-            this.workerIdTextBox.Leave += new System.EventHandler(this.workerIdTextBox_Leave);
-            // 
-            // workersBindingSource
-            // 
-            this.workersBindingSource.DataMember = "Workers";
-            this.workersBindingSource.DataSource = this.libraryDatabaseDataSet;
-            // 
-            // workersTableAdapter
-            // 
-            this.workersTableAdapter.ClearBeforeFill = true;
-            // 
             // workerIdDataGridViewTextBoxColumn1
             // 
             this.workerIdDataGridViewTextBoxColumn1.DataPropertyName = "workerId";
@@ -1636,6 +1566,88 @@
             this.workerStartDateDataGridViewTextBoxColumn.DataPropertyName = "workerStartDate";
             this.workerStartDateDataGridViewTextBoxColumn.HeaderText = "workerStartDate";
             this.workerStartDateDataGridViewTextBoxColumn.Name = "workerStartDateDataGridViewTextBoxColumn";
+            // 
+            // workersBindingSource
+            // 
+            this.workersBindingSource.DataMember = "Workers";
+            this.workersBindingSource.DataSource = this.libraryDatabaseDataSet;
+            // 
+            // workersSubmit1
+            // 
+            this.workersSubmit1.Location = new System.Drawing.Point(70, 251);
+            this.workersSubmit1.Name = "workersSubmit1";
+            this.workersSubmit1.Size = new System.Drawing.Size(100, 23);
+            this.workersSubmit1.TabIndex = 40;
+            this.workersSubmit1.Text = "submit";
+            this.workersSubmit1.UseVisualStyleBackColor = true;
+            this.workersSubmit1.Click += new System.EventHandler(this.workersSubmit1_Click);
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(31, 72);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(33, 13);
+            this.label51.TabIndex = 39;
+            this.label51.Text = "name";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(49, 46);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(15, 13);
+            this.label52.TabIndex = 38;
+            this.label52.Text = "id";
+            // 
+            // workerNameTextBox
+            // 
+            this.workerNameTextBox.Location = new System.Drawing.Point(70, 69);
+            this.workerNameTextBox.Name = "workerNameTextBox";
+            this.workerNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.workerNameTextBox.TabIndex = 37;
+            // 
+            // workerIdTextBox
+            // 
+            this.workerIdTextBox.Location = new System.Drawing.Point(70, 43);
+            this.workerIdTextBox.Name = "workerIdTextBox";
+            this.workerIdTextBox.Size = new System.Drawing.Size(100, 20);
+            this.workerIdTextBox.TabIndex = 36;
+            this.workerIdTextBox.Leave += new System.EventHandler(this.workerIdTextBox_Leave);
+            // 
+            // authorsTableAdapter
+            // 
+            this.authorsTableAdapter.ClearBeforeFill = true;
+            // 
+            // itemsTableAdapter
+            // 
+            this.itemsTableAdapter.ClearBeforeFill = true;
+            // 
+            // lendsTableAdapter
+            // 
+            this.lendsTableAdapter.ClearBeforeFill = true;
+            // 
+            // publishersTableAdapter
+            // 
+            this.publishersTableAdapter.ClearBeforeFill = true;
+            // 
+            // subscribersTableAdapter
+            // 
+            this.subscribersTableAdapter.ClearBeforeFill = true;
+            // 
+            // workersTableAdapter
+            // 
+            this.workersTableAdapter.ClearBeforeFill = true;
+            // 
+            // refreshLendDataGridViewButton
+            // 
+            this.refreshLendDataGridViewButton.Location = new System.Drawing.Point(176, 13);
+            this.refreshLendDataGridViewButton.Name = "refreshLendDataGridViewButton";
+            this.refreshLendDataGridViewButton.Size = new System.Drawing.Size(100, 23);
+            this.refreshLendDataGridViewButton.TabIndex = 58;
+            this.refreshLendDataGridViewButton.Text = "refresh";
+            this.refreshLendDataGridViewButton.UseVisualStyleBackColor = true;
+            this.refreshLendDataGridViewButton.Click += new System.EventHandler(this.refreshLendDataGridViewButton_Click);
             // 
             // DatabaseForm
             // 
@@ -1842,5 +1854,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn workerPhoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn workerStartDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox workerRankTextBox;
+        private System.Windows.Forms.Button refreshLendDataGridViewButton;
     }
 }
