@@ -50,10 +50,13 @@
             this.subscriberNameTextBox = new System.Windows.Forms.TextBox();
             this.workerNameTextBox = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -244,13 +247,22 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(579, 216);
+            this.tabPage2.Size = new System.Drawing.Size(617, 220);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "LENDS";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(9, 8);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(601, 206);
+            this.dataGridView1.TabIndex = 0;
             // 
             // WorkForm
             // 
@@ -259,7 +271,9 @@
             this.ClientSize = new System.Drawing.Size(627, 244);
             this.Controls.Add(this.tabControl1);
             this.Name = "WorkForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WorkForm";
+            this.Load += new System.EventHandler(this.WorkForm_Load);
             this.Shown += new System.EventHandler(this.WorkForm_Shown);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -268,6 +282,8 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -296,5 +312,6 @@
         private System.Windows.Forms.ColumnHeader itemNameHeader;
         private System.Windows.Forms.ColumnHeader itemQuantityHeader;
         private System.Windows.Forms.ColumnHeader itemCountHeader;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

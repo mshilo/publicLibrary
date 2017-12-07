@@ -105,5 +105,10 @@ namespace publicLibrary
         {
             workerNameTextBox.Text = Program.WorkerName;
         }
+
+        private void WorkForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
