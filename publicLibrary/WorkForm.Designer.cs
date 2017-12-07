@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.submitLendsButton = new System.Windows.Forms.Button();
@@ -51,12 +52,18 @@
             this.workerNameTextBox = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.libraryDatabaseDataSet = new publicLibrary.LibraryDatabaseDataSet();
+            this.lendsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lendsTableAdapter = new publicLibrary.LibraryDatabaseDataSetTableAdapters.LendsTableAdapter();
+            this.returnColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lendsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -259,10 +266,32 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.returnColumn});
             this.dataGridView1.Location = new System.Drawing.Point(9, 8);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(601, 206);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // libraryDatabaseDataSet
+            // 
+            this.libraryDatabaseDataSet.DataSetName = "LibraryDatabaseDataSet";
+            this.libraryDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lendsBindingSource
+            // 
+            this.lendsBindingSource.DataMember = "Lends";
+            this.lendsBindingSource.DataSource = this.libraryDatabaseDataSet;
+            // 
+            // lendsTableAdapter
+            // 
+            this.lendsTableAdapter.ClearBeforeFill = true;
+            // 
+            // returnColumn
+            // 
+            this.returnColumn.HeaderText = "return";
+            this.returnColumn.Name = "returnColumn";
+            this.returnColumn.Width = 40;
             // 
             // WorkForm
             // 
@@ -284,6 +313,8 @@
             this.panel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lendsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,5 +344,9 @@
         private System.Windows.Forms.ColumnHeader itemQuantityHeader;
         private System.Windows.Forms.ColumnHeader itemCountHeader;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private LibraryDatabaseDataSet libraryDatabaseDataSet;
+        private System.Windows.Forms.BindingSource lendsBindingSource;
+        private LibraryDatabaseDataSetTableAdapters.LendsTableAdapter lendsTableAdapter;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn returnColumn;
     }
 }

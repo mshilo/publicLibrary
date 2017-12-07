@@ -108,6 +108,8 @@ namespace publicLibrary
 
         private void WorkForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'libraryDatabaseDataSet.Lends' table. You can move, or remove it, as needed.
+            this.lendsTableAdapter.Fill(this.libraryDatabaseDataSet.Lends);
 
         }
     }
