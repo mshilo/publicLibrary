@@ -12,14 +12,14 @@ namespace publicLibrary
 {
     public partial class WorkForm : Form
     {
-
-        // TODO: put a dataGridView with the Lends table sorted by closest date in the VIEW LENDS tab 
+        // TODO: on load fill lendsListView
 
         DbItems items = new DbItems();
         DbWorkers workers = new DbWorkers();
         DbSubscribers subscribers = new DbSubscribers();
         DbLends lends = new DbLends();
         List<Lend> lendsList;
+        List<ListViewItem> lvis;
 
         public WorkForm()
         {
@@ -111,6 +111,88 @@ namespace publicLibrary
             // TODO: This line of code loads data into the 'libraryDatabaseDataSet.Lends' table. You can move, or remove it, as needed.
             this.lendsTableAdapter.Fill(this.libraryDatabaseDataSet.Lends);
 
+            DataSetToListView(lends.GetAllRecord("LENDS"));
+        }
+
+        private void searchByLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchComboBox_TextChanged(object sender, EventArgs e)
+        {
+            if (searchComboBox.Text != "" && searchComboBox.Items.Contains(searchComboBox.Text))
+            {
+                searchByLabel.Text = searchComboBox.Text + ":";
+                searchInput.Enabled = true;
+                searchButton.Enabled = true;
+            }
+            else
+            {
+                searchByLabel.Text = "";
+                searchInput.Enabled = false;
+                searchButton.Enabled = false;
+            }
+        }
+
+        private void DataSetToListView (DataSet ds)
+        {
+            // TODO: sort dt by date
+            DataTable dt = ds.Tables[0];
+            lvis = new List<ListViewItem>();
+            ListViewItem lvi;
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                lvi = new ListViewItem();
+                lvi.SubItems.Add((string)items.GetInfo((int)dr[3]).Tables[0].Rows[0][1]);
+                lvi.SubItems.Add(((int)dr[4]).ToString());
+                lvi.SubItems.Add((string)subscribers.GetInfo((int)dr[1]).Tables[0].Rows[0][1]);
+                lvi.SubItems.Add(((DateTime)(dr[6])).Date.ToString());
+
+                lvis.Add(lvi);
+            }
+
+            button1_Click_1(null,null);
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            string searchString = searchInput.Text;
+            string sql = "";
+            int id = 0;
+
+            switch (searchComboBox.Text)
+            {
+                case "item":
+                    sql = string.Format("SELECT * FROM Items WHERE itemName='{0}'", searchString);
+                    if (items.Found(searchString))
+                        id = (int)(items.GetQuery(sql).Tables[0].Rows[0][0]);
+                    sql = string.Format("SELECT * FROM Lends WHERE itemId={0}", id);
+                    DataSetToListView(lends.GetQuery(sql));
+                    break;
+                case "subscriber":
+                    sql = string.Format("SELECT * FROM Subscribers WHERE subscriberName='{0}'", searchString);
+                    if (subscribers.Found(searchString))
+                        id = (int)(subscribers.GetQuery(sql).Tables[0].Rows[0][0]);
+                    sql = string.Format("SELECT * FROM Lends WHERE subscriberId={0}", id);
+                    DataSetToListView(lends.GetQuery(sql));
+                    break;
+                case "end date":
+                    sql = string.Format("SELECT * FROM Lends WHERE  lendFinishDate LIKE '%{0}%'", searchString);
+                    DataSetToListView(lends.GetQuery(sql));
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            lendsListView.Items.Clear();
+            foreach (var item in lvis)
+                lendsListView.Items.Add(item);
+            lendsListView.Refresh();
         }
     }
 }
