@@ -51,6 +51,7 @@
             this.subscriberNameTextBox = new System.Windows.Forms.TextBox();
             this.workerNameTextBox = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.updateLendList = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.searchButton = new System.Windows.Forms.Button();
@@ -59,6 +60,7 @@
             this.searchByLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lendsListView = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.itemNameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.quantityColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.subscriberNameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -66,8 +68,6 @@
             this.libraryDatabaseDataSet = new publicLibrary.LibraryDatabaseDataSet();
             this.lendsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lendsTableAdapter = new publicLibrary.LibraryDatabaseDataSetTableAdapters.LendsTableAdapter();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.updateLendList = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -283,6 +283,17 @@
             this.tabPage2.Text = "LENDS";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // updateLendList
+            // 
+            this.updateLendList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateLendList.Location = new System.Drawing.Point(211, 248);
+            this.updateLendList.Name = "updateLendList";
+            this.updateLendList.Size = new System.Drawing.Size(75, 23);
+            this.updateLendList.TabIndex = 3;
+            this.updateLendList.Text = "update";
+            this.updateLendList.UseVisualStyleBackColor = true;
+            this.updateLendList.Click += new System.EventHandler(this.updateLendList_Click);
+            // 
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -376,6 +387,11 @@
             this.lendsListView.UseCompatibleStateImageBehavior = false;
             this.lendsListView.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "";
+            this.columnHeader1.Width = 20;
+            // 
             // itemNameColumn
             // 
             this.itemNameColumn.Text = "item name";
@@ -409,21 +425,6 @@
             // lendsTableAdapter
             // 
             this.lendsTableAdapter.ClearBeforeFill = true;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "";
-            this.columnHeader1.Width = 20;
-            // 
-            // updateLendList
-            // 
-            this.updateLendList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.updateLendList.Location = new System.Drawing.Point(211, 248);
-            this.updateLendList.Name = "updateLendList";
-            this.updateLendList.Size = new System.Drawing.Size(75, 23);
-            this.updateLendList.TabIndex = 3;
-            this.updateLendList.Text = "update";
-            this.updateLendList.UseVisualStyleBackColor = true;
             // 
             // WorkForm
             // 

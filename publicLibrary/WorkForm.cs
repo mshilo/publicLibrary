@@ -194,5 +194,10 @@ namespace publicLibrary
                 lendsListView.Items.Add(item);
             lendsListView.Refresh();
         }
+
+        private void updateLendList_Click(object sender, EventArgs e)
+        {
+            // DOTO: return every lend that has been marked to the library
+        }
     }
 }
