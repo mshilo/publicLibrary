@@ -56,9 +56,11 @@ namespace publicLibrary
             return ds;
         }
 
+
+
         public void UpdateStock (int id, int quantity)
         {
-            quantity = (int)this.GetInfo(id).Tables[0].Rows[0].ItemArray[2] - quantity;
+            quantity = (int)this.GetInfo(id).Tables[0].Rows[0].ItemArray[2] + quantity;
             string sql = string.Format("UPDATE Items SET itemCount={0} WHERE itemId={1}", quantity, id);
             base.Update(sql);
         }

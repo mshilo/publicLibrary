@@ -37,6 +37,7 @@
             // 
             // launchDatabaseFormButton
             // 
+            this.launchDatabaseFormButton.Enabled = false;
             this.launchDatabaseFormButton.Location = new System.Drawing.Point(12, 197);
             this.launchDatabaseFormButton.Name = "launchDatabaseFormButton";
             this.launchDatabaseFormButton.Size = new System.Drawing.Size(260, 23);
@@ -47,6 +48,7 @@
             // 
             // launchWorkFormButton
             // 
+            this.launchWorkFormButton.Enabled = false;
             this.launchWorkFormButton.Location = new System.Drawing.Point(12, 226);
             this.launchWorkFormButton.Name = "launchWorkFormButton";
             this.launchWorkFormButton.Size = new System.Drawing.Size(260, 23);
@@ -57,13 +59,13 @@
             // 
             // logInButton
             // 
+            this.logInButton.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.logInButton.Location = new System.Drawing.Point(197, 12);
             this.logInButton.Name = "logInButton";
             this.logInButton.Size = new System.Drawing.Size(75, 23);
             this.logInButton.TabIndex = 2;
             this.logInButton.Text = "log in";
             this.logInButton.UseVisualStyleBackColor = true;
-            this.logInButton.UseWaitCursor = true;
             this.logInButton.Click += new System.EventHandler(this.logInButton_Click);
             // 
             // workerPasswordTextBox

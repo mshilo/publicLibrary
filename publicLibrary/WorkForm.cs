@@ -71,6 +71,7 @@ namespace publicLibrary
                     lvi.SubItems.Add(inStock.ToString());
                     itemsListView.Items.Add(lvi);
                     itemsListView.Update();
+
                 }
                 else
                 {
@@ -91,14 +92,16 @@ namespace publicLibrary
             foreach (var item in lendsList)
             {
                 lends.Insert(item);
-                items.UpdateStock(item.ItemId, item.ItemQuantity);
+                items.UpdateStock(item.ItemId, -item.ItemQuantity);
             }
+
+            DataSetToListView(lends.GetAllRecord("LENDS"));
+            button1_Click_1(null, null);
 
             subscriberNameTextBox.Text = "";
             itemsListView.Items.Clear();
             itemsListView.Refresh();
 
-            MessageBox.Show("DONE");
         }
 
         private void WorkForm_Shown(object sender, EventArgs e)
@@ -187,17 +190,75 @@ namespace publicLibrary
             }
         }
 
+        public List<ListViewItem> SortListViewItemsByDate (List<ListViewItem> litems)
+        {
+            ListViewItem temp;
+            List<ListViewItem> temps = litems;
+            for (int i = 0; i < litems.Count; i++)
+            {
+                for (int j = 1; j < litems.Count; j++)
+                {
+                    if (DateTime.Parse(temps[j].SubItems[4].Text) < DateTime.Parse(temps[j - 1].SubItems[4].Text))
+                    {
+                        temp = temps[j - 1];
+                        temps[j - 1] = temps[j];
+                        temps[j] = temp;
+                    }
+                }
+            }
+
+            return temps;
+        }
+
         private void button1_Click_1(object sender, EventArgs e)
         {
             lendsListView.Items.Clear();
+            lvis = SortListViewItemsByDate(lvis);
             foreach (var item in lvis)
+            {
                 lendsListView.Items.Add(item);
+                if (DateTime.Now > DateTime.Parse(item.SubItems[4].Text))
+                    lendsListView.Items[lendsListView.Items.Count - 1].BackColor = Color.Red;
+            }
+
+            
             lendsListView.Refresh();
         }
 
         private void updateLendList_Click(object sender, EventArgs e)
         {
             // DOTO: return every lend that has been marked to the library
+            List<ListViewItem> lvitems = new List<ListViewItem>();
+
+            for (int i =0; i < lendsListView.Items.Count; i++)
+            {
+                if (lendsListView.Items[i].Checked == true)
+                {
+                    lvitems.Add(lendsListView.Items[i]);
+                }
+            }
+
+            foreach (var item in lvitems)
+                lvis.Remove(item);
+
+
+            foreach (var item in lvitems)
+            {
+                // update item quantity
+                items.UpdateStock(int.Parse(items.GetInfo(item.SubItems[1].Text).Tables[0].Rows[0][0].ToString()), int.Parse(item.SubItems[2].Text));
+                // remove entry from lends table
+                lends.Remove(
+                    int.Parse(items.GetInfo(item.SubItems[1].Text).Tables[0].Rows[0][0].ToString()), 
+                    int.Parse(subscribers.GetInfo(item.SubItems[3].Text).Tables[0].Rows[0][0].ToString()),
+                    int.Parse(item.SubItems[2].Text)
+                    );
+            }
+            button1_Click_1(null, null);
+        }
+
+        private void lendsListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

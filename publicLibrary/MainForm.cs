@@ -33,8 +33,16 @@ namespace publicLibrary
             {
                 Program.WorkerName = db.LogIn(s);
                 nameLabel.Text = "welcome " + db.LogIn(s);
+
                 workerPasswordTextBox.Enabled = false;
                 logInButton.Enabled = false;
+
+                launchWorkFormButton.Enabled = true;
+                launchDatabaseFormButton.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("invalid password");
             }
         }
 

@@ -386,6 +386,7 @@
             this.lendsListView.TabIndex = 0;
             this.lendsListView.UseCompatibleStateImageBehavior = false;
             this.lendsListView.View = System.Windows.Forms.View.Details;
+            this.lendsListView.SelectedIndexChanged += new System.EventHandler(this.lendsListView_SelectedIndexChanged);
             // 
             // columnHeader1
             // 

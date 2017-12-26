@@ -52,5 +52,18 @@ namespace publicLibrary
         {
             return new DataSet();
         }
+
+        public void Remove(int itemId, int subscriberId, int quantity)
+        {
+            string sql = string.Format("DELETE FROM Lends WHERE itemId={0} AND subscriberId={1} AND itemQuantity={2}", itemId, subscriberId, quantity);
+            base.Update(sql);
+        }
+        public DataSet GetInfo(int itemId, int subscriberId, int quantity)
+        {
+            DataSet ds = new DataSet();
+            string sql = string.Format("SELECT * FROM Lends WHERE itemId={0} AND subscriberId={1} AND itemQuantity={2}", itemId, subscriberId, quantity);
+            ds = GetQuery(sql);
+            return ds;
+        }
     }
 }
