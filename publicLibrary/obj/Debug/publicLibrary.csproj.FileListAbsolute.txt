@@ -42,3 +42,16 @@ F:\Programming\publicLibrary\publicLibrary\obj\Debug\publicLibrary.WorkForm.reso
 F:\Programming\publicLibrary\publicLibrary\obj\Debug\publicLibrary.csproj.GenerateResource.Cache
 F:\Programming\publicLibrary\publicLibrary\obj\Debug\publicLibrary.exe
 F:\Programming\publicLibrary\publicLibrary\obj\Debug\publicLibrary.pdb
+C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\bin\Debug\access\LibraryDatabase.accdb
+C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\bin\Debug\publicLibrary.exe.config
+C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\bin\Debug\publicLibrary.exe
+C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\bin\Debug\publicLibrary.pdb
+C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibrary.DatabaseForm.resources
+C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibrary.MainForm.resources
+C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibrary.Properties.Resources.resources
+C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibrary.WorkForm.resources
+C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibrary.csproj.GenerateResource.Cache
+C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibrary.exe
+C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibrary.pdb

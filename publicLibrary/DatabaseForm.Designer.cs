@@ -80,6 +80,7 @@
             this.itemNameTextBox = new System.Windows.Forms.TextBox();
             this.itemIdTextBox = new System.Windows.Forms.TextBox();
             this.lendsTab = new System.Windows.Forms.TabPage();
+            this.refreshLendDataGridViewButton = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.lendEndDateTextBox = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -193,7 +194,6 @@
             this.publishersTableAdapter = new publicLibrary.LibraryDatabaseDataSetTableAdapters.PublishersTableAdapter();
             this.subscribersTableAdapter = new publicLibrary.LibraryDatabaseDataSetTableAdapters.SubscribersTableAdapter();
             this.workersTableAdapter = new publicLibrary.LibraryDatabaseDataSetTableAdapters.WorkersTableAdapter();
-            this.refreshLendDataGridViewButton = new System.Windows.Forms.Button();
             authorsTab = new System.Windows.Forms.TabPage();
             authorsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.authorsDataGridView)).BeginInit();
@@ -372,6 +372,7 @@
             this.databaseTabControl.Name = "databaseTabControl";
             this.databaseTabControl.SelectedIndex = 0;
             this.databaseTabControl.Size = new System.Drawing.Size(1050, 407);
+            this.databaseTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.databaseTabControl.TabIndex = 0;
             // 
             // itemsTab
@@ -693,6 +694,16 @@
             this.lendsTab.TabIndex = 2;
             this.lendsTab.Text = "LENDS";
             this.lendsTab.UseVisualStyleBackColor = true;
+            // 
+            // refreshLendDataGridViewButton
+            // 
+            this.refreshLendDataGridViewButton.Location = new System.Drawing.Point(176, 13);
+            this.refreshLendDataGridViewButton.Name = "refreshLendDataGridViewButton";
+            this.refreshLendDataGridViewButton.Size = new System.Drawing.Size(100, 23);
+            this.refreshLendDataGridViewButton.TabIndex = 58;
+            this.refreshLendDataGridViewButton.Text = "refresh";
+            this.refreshLendDataGridViewButton.UseVisualStyleBackColor = true;
+            this.refreshLendDataGridViewButton.Click += new System.EventHandler(this.refreshLendDataGridViewButton_Click);
             // 
             // label18
             // 
@@ -1638,16 +1649,6 @@
             // workersTableAdapter
             // 
             this.workersTableAdapter.ClearBeforeFill = true;
-            // 
-            // refreshLendDataGridViewButton
-            // 
-            this.refreshLendDataGridViewButton.Location = new System.Drawing.Point(176, 13);
-            this.refreshLendDataGridViewButton.Name = "refreshLendDataGridViewButton";
-            this.refreshLendDataGridViewButton.Size = new System.Drawing.Size(100, 23);
-            this.refreshLendDataGridViewButton.TabIndex = 58;
-            this.refreshLendDataGridViewButton.Text = "refresh";
-            this.refreshLendDataGridViewButton.UseVisualStyleBackColor = true;
-            this.refreshLendDataGridViewButton.Click += new System.EventHandler(this.refreshLendDataGridViewButton_Click);
             // 
             // DatabaseForm
             // 

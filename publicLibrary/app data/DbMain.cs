@@ -74,10 +74,6 @@ namespace publicLibrary
 
         public void Update(string sql)
         {
-            /*          טענת כניסה: הפונקציה מקבלת מחרוזת פקודה
-                   טענת יציאה : הפונקציה מעדכנת את בסיס הנתונים       
-            */
-
             cmd = new OleDbCommand();
 
             try

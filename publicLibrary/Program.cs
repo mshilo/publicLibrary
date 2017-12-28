@@ -8,6 +8,11 @@ namespace publicLibrary
 {
     static class Program
     {
+        // TODO: להוסיף קומבובוקסים
+        // TODO: להגביל את מספר הספרים הניתנים להשאלה ללקוח אחד
+        // TODO: לתת התראה כשאר לקוח מנסה להשאיל עוד ספר בעוד שישנם ספרים שהוא עדיין להחזיר
+        // TODO: להוסיף מסך חיפוש לספרים
+
         public static string WorkerName { get; set; }
 
         /// <summary>
