@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.launchDatabaseFormButton = new System.Windows.Forms.Button();
             this.launchWorkFormButton = new System.Windows.Forms.Button();
             this.logInButton = new System.Windows.Forms.Button();
@@ -37,66 +38,52 @@
             // 
             // launchDatabaseFormButton
             // 
-            this.launchDatabaseFormButton.Enabled = false;
-            this.launchDatabaseFormButton.Location = new System.Drawing.Point(12, 197);
+            resources.ApplyResources(this.launchDatabaseFormButton, "launchDatabaseFormButton");
             this.launchDatabaseFormButton.Name = "launchDatabaseFormButton";
-            this.launchDatabaseFormButton.Size = new System.Drawing.Size(260, 23);
-            this.launchDatabaseFormButton.TabIndex = 0;
-            this.launchDatabaseFormButton.Text = "database form";
             this.launchDatabaseFormButton.UseVisualStyleBackColor = true;
             this.launchDatabaseFormButton.Click += new System.EventHandler(this.launchDatabaseFormButton_Click);
             // 
             // launchWorkFormButton
             // 
-            this.launchWorkFormButton.Enabled = false;
-            this.launchWorkFormButton.Location = new System.Drawing.Point(12, 226);
+            resources.ApplyResources(this.launchWorkFormButton, "launchWorkFormButton");
             this.launchWorkFormButton.Name = "launchWorkFormButton";
-            this.launchWorkFormButton.Size = new System.Drawing.Size(260, 23);
-            this.launchWorkFormButton.TabIndex = 1;
-            this.launchWorkFormButton.Text = "work form";
             this.launchWorkFormButton.UseVisualStyleBackColor = true;
             this.launchWorkFormButton.Click += new System.EventHandler(this.launchWorkFormButton_Click);
             // 
             // logInButton
             // 
+            resources.ApplyResources(this.logInButton, "logInButton");
             this.logInButton.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.logInButton.Location = new System.Drawing.Point(197, 12);
             this.logInButton.Name = "logInButton";
-            this.logInButton.Size = new System.Drawing.Size(75, 23);
-            this.logInButton.TabIndex = 2;
-            this.logInButton.Text = "log in";
             this.logInButton.UseVisualStyleBackColor = true;
             this.logInButton.Click += new System.EventHandler(this.logInButton_Click);
             // 
             // workerPasswordTextBox
             // 
-            this.workerPasswordTextBox.Location = new System.Drawing.Point(12, 14);
+            resources.ApplyResources(this.workerPasswordTextBox, "workerPasswordTextBox");
             this.workerPasswordTextBox.Name = "workerPasswordTextBox";
-            this.workerPasswordTextBox.PasswordChar = '*';
-            this.workerPasswordTextBox.Size = new System.Drawing.Size(179, 20);
-            this.workerPasswordTextBox.TabIndex = 3;
+            this.workerPasswordTextBox.UseSystemPasswordChar = true;
             // 
             // nameLabel
             // 
-            this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(12, 48);
+            resources.ApplyResources(this.nameLabel, "nameLabel");
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(0, 13);
-            this.nameLabel.TabIndex = 4;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.workerPasswordTextBox);
             this.Controls.Add(this.logInButton);
             this.Controls.Add(this.launchWorkFormButton);
             this.Controls.Add(this.launchDatabaseFormButton);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Main";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

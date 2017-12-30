@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.submitLendsButton = new System.Windows.Forms.Button();
@@ -52,7 +53,7 @@
             this.workerNameTextBox = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.updateLendList = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lendsListViewRefreshButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.searchButton = new System.Windows.Forms.Button();
             this.searchComboBox = new System.Windows.Forms.ComboBox();
@@ -137,11 +138,14 @@
             // 
             // itemsListView
             // 
+            this.itemsListView.BackColor = System.Drawing.Color.White;
             this.itemsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.itemIdHeader,
             this.itemNameHeader,
             this.itemQuantityHeader,
             this.itemCountHeader});
+            this.itemsListView.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.itemsListView.GridLines = true;
             this.itemsListView.Location = new System.Drawing.Point(388, 40);
             this.itemsListView.Name = "itemsListView";
             this.itemsListView.Size = new System.Drawing.Size(403, 185);
@@ -272,7 +276,7 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.updateLendList);
-            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.lendsListViewRefreshButton);
             this.tabPage2.Controls.Add(this.panel3);
             this.tabPage2.Controls.Add(this.lendsListView);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -294,16 +298,16 @@
             this.updateLendList.UseVisualStyleBackColor = true;
             this.updateLendList.Click += new System.EventHandler(this.updateLendList_Click);
             // 
-            // button1
+            // lendsListViewRefreshButton
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(211, 67);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "refresh";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.lendsListViewRefreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lendsListViewRefreshButton.Location = new System.Drawing.Point(211, 67);
+            this.lendsListViewRefreshButton.Name = "lendsListViewRefreshButton";
+            this.lendsListViewRefreshButton.Size = new System.Drawing.Size(75, 23);
+            this.lendsListViewRefreshButton.TabIndex = 2;
+            this.lendsListViewRefreshButton.Text = "refresh";
+            this.lendsListViewRefreshButton.UseVisualStyleBackColor = true;
+            this.lendsListViewRefreshButton.Click += new System.EventHandler(this.lendsListViewRefreshButton_Click);
             // 
             // panel3
             // 
@@ -433,6 +437,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(986, 366);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "WorkForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WorkForm";
@@ -491,7 +498,7 @@
         private System.Windows.Forms.ColumnHeader subscriberNameColumn;
         private System.Windows.Forms.ColumnHeader endDateColumn;
         private System.Windows.Forms.ComboBox searchComboBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button lendsListViewRefreshButton;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Button updateLendList;

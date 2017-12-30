@@ -55,3 +55,9 @@ C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibra
 C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibrary.csproj.CoreCompileInputs.cache
 C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibrary.exe
 C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibrary.pdb
+F:\Programming\publicLibrary\publicLibrary\bin\Debug\bn\publicLibrary.resources.dll
+F:\Programming\publicLibrary\publicLibrary\bin\Debug\en\publicLibrary.resources.dll
+F:\Programming\publicLibrary\publicLibrary\obj\Debug\publicLibrary.MainForm.bn.resources
+F:\Programming\publicLibrary\publicLibrary\obj\Debug\publicLibrary.MainForm.en.resources
+F:\Programming\publicLibrary\publicLibrary\obj\Debug\bn\publicLibrary.resources.dll
+F:\Programming\publicLibrary\publicLibrary\obj\Debug\en\publicLibrary.resources.dll

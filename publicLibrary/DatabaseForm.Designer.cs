@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TabPage authorsTab;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatabaseForm));
             this.label4 = new System.Windows.Forms.Label();
             this.authorsSubmit2 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -249,6 +250,7 @@
             // 
             // authorsSubmit2
             // 
+            this.authorsSubmit2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.authorsSubmit2.Location = new System.Drawing.Point(70, 183);
             this.authorsSubmit2.Name = "authorsSubmit2";
             this.authorsSubmit2.Size = new System.Drawing.Size(100, 23);
@@ -276,20 +278,25 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(67, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 13);
+            this.label3.Size = new System.Drawing.Size(97, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "ADD / UPDATE";
             // 
             // authorsDataGridView
             // 
             this.authorsDataGridView.AutoGenerateColumns = false;
+            this.authorsDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.authorsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.authorsDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.authorsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.authorsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.authorIdDataGridViewTextBoxColumn,
             this.authorNameDataGridViewTextBoxColumn});
             this.authorsDataGridView.DataSource = this.authorsBindingSource;
+            this.authorsDataGridView.GridColor = System.Drawing.Color.Black;
             this.authorsDataGridView.Location = new System.Drawing.Point(176, 43);
             this.authorsDataGridView.Name = "authorsDataGridView";
             this.authorsDataGridView.Size = new System.Drawing.Size(843, 317);
@@ -319,6 +326,7 @@
             // 
             // authorsSubmit1
             // 
+            this.authorsSubmit1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.authorsSubmit1.Location = new System.Drawing.Point(70, 95);
             this.authorsSubmit1.Name = "authorsSubmit1";
             this.authorsSubmit1.Size = new System.Drawing.Size(100, 23);
@@ -368,9 +376,10 @@
             this.databaseTabControl.Controls.Add(this.publishersTab);
             this.databaseTabControl.Controls.Add(this.subscribersTab);
             this.databaseTabControl.Controls.Add(this.workersTab);
-            this.databaseTabControl.Location = new System.Drawing.Point(0, 0);
+            this.databaseTabControl.Location = new System.Drawing.Point(12, 11);
             this.databaseTabControl.Name = "databaseTabControl";
             this.databaseTabControl.SelectedIndex = 0;
+            this.databaseTabControl.ShowToolTips = true;
             this.databaseTabControl.Size = new System.Drawing.Size(1050, 407);
             this.databaseTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.databaseTabControl.TabIndex = 0;
@@ -515,6 +524,7 @@
             // 
             // itemsSubmit2
             // 
+            this.itemsSubmit2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.itemsSubmit2.Location = new System.Drawing.Point(70, 337);
             this.itemsSubmit2.Name = "itemsSubmit2";
             this.itemsSubmit2.Size = new System.Drawing.Size(100, 23);
@@ -542,15 +552,18 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(67, 18);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 13);
+            this.label8.Size = new System.Drawing.Size(97, 13);
             this.label8.TabIndex = 19;
             this.label8.Text = "ADD / UPDATE";
             // 
             // itemsDataGridView
             // 
             this.itemsDataGridView.AutoGenerateColumns = false;
+            this.itemsDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.itemsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.itemsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.itemsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.itemIdDataGridViewTextBoxColumn,
@@ -622,6 +635,7 @@
             // 
             // itemsSubmit1
             // 
+            this.itemsSubmit1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.itemsSubmit1.Location = new System.Drawing.Point(70, 251);
             this.itemsSubmit1.Name = "itemsSubmit1";
             this.itemsSubmit1.Size = new System.Drawing.Size(100, 23);
@@ -697,6 +711,7 @@
             // 
             // refreshLendDataGridViewButton
             // 
+            this.refreshLendDataGridViewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.refreshLendDataGridViewButton.Location = new System.Drawing.Point(176, 13);
             this.refreshLendDataGridViewButton.Name = "refreshLendDataGridViewButton";
             this.refreshLendDataGridViewButton.Size = new System.Drawing.Size(100, 23);
@@ -796,6 +811,7 @@
             // 
             // lendsSubmit2
             // 
+            this.lendsSubmit2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lendsSubmit2.Location = new System.Drawing.Point(70, 311);
             this.lendsSubmit2.Name = "lendsSubmit2";
             this.lendsSubmit2.Size = new System.Drawing.Size(100, 23);
@@ -823,15 +839,18 @@
             // label25
             // 
             this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.Location = new System.Drawing.Point(67, 18);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(85, 13);
+            this.label25.Size = new System.Drawing.Size(97, 13);
             this.label25.TabIndex = 42;
             this.label25.Text = "ADD / UPDATE";
             // 
             // lendsDataGridView
             // 
             this.lendsDataGridView.AutoGenerateColumns = false;
+            this.lendsDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.lendsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lendsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.lendsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.lendIdDataGridViewTextBoxColumn,
@@ -896,6 +915,7 @@
             // 
             // lendsSubmit1
             // 
+            this.lendsSubmit1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lendsSubmit1.Location = new System.Drawing.Point(70, 225);
             this.lendsSubmit1.Name = "lendsSubmit1";
             this.lendsSubmit1.Size = new System.Drawing.Size(100, 23);
@@ -1005,6 +1025,7 @@
             // 
             // publishersSubmit2
             // 
+            this.publishersSubmit2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.publishersSubmit2.Location = new System.Drawing.Point(70, 234);
             this.publishersSubmit2.Name = "publishersSubmit2";
             this.publishersSubmit2.Size = new System.Drawing.Size(100, 23);
@@ -1032,15 +1053,18 @@
             // label35
             // 
             this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.Location = new System.Drawing.Point(67, 18);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(85, 13);
+            this.label35.Size = new System.Drawing.Size(97, 13);
             this.label35.TabIndex = 42;
             this.label35.Text = "ADD / UPDATE";
             // 
             // publishersDataGridView
             // 
             this.publishersDataGridView.AutoGenerateColumns = false;
+            this.publishersDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.publishersDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.publishersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.publishersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.publisherIdDataGridViewTextBoxColumn1,
@@ -1084,6 +1108,7 @@
             // 
             // publishersSubmit1
             // 
+            this.publishersSubmit1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.publishersSubmit1.Location = new System.Drawing.Point(70, 147);
             this.publishersSubmit1.Name = "publishersSubmit1";
             this.publishersSubmit1.Size = new System.Drawing.Size(100, 23);
@@ -1211,6 +1236,7 @@
             // 
             // subscribersSubmit2
             // 
+            this.subscribersSubmit2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.subscribersSubmit2.Location = new System.Drawing.Point(70, 259);
             this.subscribersSubmit2.Name = "subscribersSubmit2";
             this.subscribersSubmit2.Size = new System.Drawing.Size(100, 23);
@@ -1238,15 +1264,18 @@
             // label42
             // 
             this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label42.Location = new System.Drawing.Point(67, 18);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(85, 13);
+            this.label42.Size = new System.Drawing.Size(97, 13);
             this.label42.TabIndex = 42;
             this.label42.Text = "ADD / UPDATE";
             // 
             // subscribersDataGridView
             // 
             this.subscribersDataGridView.AutoGenerateColumns = false;
+            this.subscribersDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.subscribersDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.subscribersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.subscribersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.subscriberIdDataGridViewTextBoxColumn1,
@@ -1297,6 +1326,7 @@
             // 
             // subscribersSubmit1
             // 
+            this.subscribersSubmit1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.subscribersSubmit1.Location = new System.Drawing.Point(70, 173);
             this.subscribersSubmit1.Name = "subscribersSubmit1";
             this.subscribersSubmit1.Size = new System.Drawing.Size(100, 23);
@@ -1478,6 +1508,7 @@
             // 
             // workersSubmit2
             // 
+            this.workersSubmit2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.workersSubmit2.Location = new System.Drawing.Point(70, 337);
             this.workersSubmit2.Name = "workersSubmit2";
             this.workersSubmit2.Size = new System.Drawing.Size(100, 23);
@@ -1505,15 +1536,18 @@
             // label50
             // 
             this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label50.Location = new System.Drawing.Point(67, 18);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(85, 13);
+            this.label50.Size = new System.Drawing.Size(97, 13);
             this.label50.TabIndex = 42;
             this.label50.Text = "ADD / UPDATE";
             // 
             // workersDataGridView
             // 
             this.workersDataGridView.AutoGenerateColumns = false;
+            this.workersDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.workersDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.workersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.workersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.workerIdDataGridViewTextBoxColumn1,
@@ -1585,6 +1619,7 @@
             // 
             // workersSubmit1
             // 
+            this.workersSubmit1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.workersSubmit1.Location = new System.Drawing.Point(70, 251);
             this.workersSubmit1.Name = "workersSubmit1";
             this.workersSubmit1.Size = new System.Drawing.Size(100, 23);
@@ -1654,10 +1689,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1048, 406);
+            this.ClientSize = new System.Drawing.Size(1074, 426);
             this.Controls.Add(this.databaseTabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "DatabaseForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Database";
             this.Load += new System.EventHandler(this.DatabaseForm_Load);
             authorsTab.ResumeLayout(false);

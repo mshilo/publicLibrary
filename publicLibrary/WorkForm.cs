@@ -12,12 +12,12 @@ namespace publicLibrary
 {
     public partial class WorkForm : Form
     {
-        // TODO: on load fill lendsListView
 
         DbItems items = new DbItems();
         DbWorkers workers = new DbWorkers();
         DbSubscribers subscribers = new DbSubscribers();
         DbLends lends = new DbLends();
+
         List<Lend> lendsList;
         List<ListViewItem> lvis;
 
@@ -55,7 +55,7 @@ namespace publicLibrary
                         {
                             Id = lendId,
                             SUbscriberId = (int)subscribers.GetInfo(subscriberNameTextBox.Text).Tables[0].Rows[0].ItemArray[0],
-                            WorkerId = (int)workers.GetInfo(Program.WorkerName).Tables[0].Rows[0].ItemArray[0],
+                            WorkerId = (int)workers.GetInfo(User.Name).Tables[0].Rows[0].ItemArray[0],
                             ItemId = id,
                             ItemQuantity = quantity,
                             StartDate = DateTime.Now,
@@ -96,7 +96,7 @@ namespace publicLibrary
             }
 
             DataSetToListView(lends.GetAllRecord("LENDS"));
-            button1_Click_1(null, null);
+            lendsListViewRefreshButton_Click(null, null);
 
             subscriberNameTextBox.Text = "";
             itemsListView.Items.Clear();
@@ -106,7 +106,7 @@ namespace publicLibrary
 
         private void WorkForm_Shown(object sender, EventArgs e)
         {
-            workerNameTextBox.Text = Program.WorkerName;
+            workerNameTextBox.Text = User.Name;
         }
 
         private void WorkForm_Load(object sender, EventArgs e)
@@ -156,7 +156,7 @@ namespace publicLibrary
                 lvis.Add(lvi);
             }
 
-            button1_Click_1(null,null);
+            lendsListViewRefreshButton_Click(null,null);
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -210,7 +210,7 @@ namespace publicLibrary
             return temps;
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void lendsListViewRefreshButton_Click(object sender, EventArgs e)
         {
             lendsListView.Items.Clear();
             lvis = SortListViewItemsByDate(lvis);
@@ -218,10 +218,9 @@ namespace publicLibrary
             {
                 lendsListView.Items.Add(item);
                 if (DateTime.Now > DateTime.Parse(item.SubItems[4].Text))
-                    lendsListView.Items[lendsListView.Items.Count - 1].BackColor = Color.Red;
+                    lendsListView.Items[lendsListView.Items.Count - 1].BackColor = Color.Tomato;
             }
 
-            
             lendsListView.Refresh();
         }
 
@@ -253,7 +252,7 @@ namespace publicLibrary
                     int.Parse(item.SubItems[2].Text)
                     );
             }
-            button1_Click_1(null, null);
+            lendsListViewRefreshButton_Click(null, null);
         }
 
         private void lendsListView_SelectedIndexChanged(object sender, EventArgs e)

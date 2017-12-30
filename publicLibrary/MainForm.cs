@@ -17,6 +17,7 @@ namespace publicLibrary
         public MainForm()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.Fixed3D;
         }
 
         private void launchDatabaseFormButton_Click(object sender, EventArgs e)
@@ -29,10 +30,16 @@ namespace publicLibrary
         private void logInButton_Click(object sender, EventArgs e)
         {
             string s = workerPasswordTextBox.Text;
-            if (db.LogIn(s) != "invalid password")
+            if (db.LogIn(s) != null)
             {
-                Program.WorkerName = db.LogIn(s);
-                nameLabel.Text = "welcome " + db.LogIn(s);
+                string[] userInfo = db.LogIn(s);
+
+                User.Name = userInfo[0];
+                User.Password = s;
+                User.Rank = int.Parse(userInfo[2]);
+                User.ID = int.Parse(userInfo[3]);
+
+                nameLabel.Text = "welcome " + User.Name;
 
                 workerPasswordTextBox.Enabled = false;
                 logInButton.Enabled = false;
@@ -50,6 +57,11 @@ namespace publicLibrary
         {
             WorkForm wForm = new WorkForm();
             wForm.Show();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

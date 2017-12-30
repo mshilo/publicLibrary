@@ -20,7 +20,7 @@ namespace publicLibrary
         public override void Update<Titem>(Titem a)
         {
             Worker w = (Worker)(object)a;
-            string sql = string.Format("UPDATE WORKERS SET workerName='{0}', workerPassword='{1}', workerRank={2}, workerAddress='{3}', workerEmail='{4}',workerPhone='{5}', workerStartDate='{6}' WHERE workerId={7}", w.Name, w.Password, w.Rank, w.Address, w.Email, w.PhoneNumber, w.StartDate, w.Id);
+            string sql = string.Format("UPDATE WORKERS SET workerName='{0}', workerPassword='{1}', workerRank='{2}', workerAddress='{3}', workerEmail='{4}',workerPhone='{5}', workerStartDate='{6}' WHERE workerId={7}", w.Name, w.Password, w.Rank, w.Address, w.Email, w.PhoneNumber, w.StartDate, w.Id);
             base.Update(sql);
         }
 
@@ -56,15 +56,25 @@ namespace publicLibrary
             return ds;
         }
 
-        public string LogIn(string password)
+        public string[] LogIn(string password)
         {
+            string[] userInfo = new string[4];
             DataSet ds = new DataSet();
             string sql = string.Format("SELECT * FROM Workers WHERE workerPassword='{0}'", password);
             ds = base.GetQuery(sql);
             if (0 != ds.Tables[0].Rows.Count)
-                return ds.Tables[0].Rows[0][1].ToString();
+            {
+                userInfo[0] = (string)ds.Tables[0].Rows[0][1];
+                userInfo[1] = password;
+                userInfo[2] = (string)ds.Tables[0].Rows[0][3];
+                userInfo[3] = ds.Tables[0].Rows[0][0].ToString();
+
+                return userInfo;
+            }
             else
-                return "invalid password";
+            {
+                return null;
+            }
         }
     }
 }
