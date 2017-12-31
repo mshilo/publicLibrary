@@ -81,7 +81,7 @@
             this.itemNameTextBox = new System.Windows.Forms.TextBox();
             this.itemIdTextBox = new System.Windows.Forms.TextBox();
             this.lendsTab = new System.Windows.Forms.TabPage();
-            this.refreshLendDataGridViewButton = new System.Windows.Forms.Button();
+            this.refreshLendsDataGridViewButton = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.lendEndDateTextBox = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -195,6 +195,11 @@
             this.publishersTableAdapter = new publicLibrary.LibraryDatabaseDataSetTableAdapters.PublishersTableAdapter();
             this.subscribersTableAdapter = new publicLibrary.LibraryDatabaseDataSetTableAdapters.SubscribersTableAdapter();
             this.workersTableAdapter = new publicLibrary.LibraryDatabaseDataSetTableAdapters.WorkersTableAdapter();
+            this.refreshAuthorsDataGridViewButton = new System.Windows.Forms.Button();
+            this.refreshItemsDataGridViewButton = new System.Windows.Forms.Button();
+            this.refreshPublishersDataGridViewButton = new System.Windows.Forms.Button();
+            this.refreshSubscribersDataGridViewButton = new System.Windows.Forms.Button();
+            this.refreshWorkersDataGridViewButton = new System.Windows.Forms.Button();
             authorsTab = new System.Windows.Forms.TabPage();
             authorsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.authorsDataGridView)).BeginInit();
@@ -220,6 +225,7 @@
             // 
             // authorsTab
             // 
+            authorsTab.Controls.Add(this.refreshAuthorsDataGridViewButton);
             authorsTab.Controls.Add(this.label4);
             authorsTab.Controls.Add(this.authorsSubmit2);
             authorsTab.Controls.Add(this.label6);
@@ -386,6 +392,7 @@
             // 
             // itemsTab
             // 
+            this.itemsTab.Controls.Add(this.refreshItemsDataGridViewButton);
             this.itemsTab.Controls.Add(this.label15);
             this.itemsTab.Controls.Add(this.label16);
             this.itemsTab.Controls.Add(this.itemLanguageTextBox);
@@ -679,7 +686,7 @@
             // 
             // lendsTab
             // 
-            this.lendsTab.Controls.Add(this.refreshLendDataGridViewButton);
+            this.lendsTab.Controls.Add(this.refreshLendsDataGridViewButton);
             this.lendsTab.Controls.Add(this.label18);
             this.lendsTab.Controls.Add(this.lendEndDateTextBox);
             this.lendsTab.Controls.Add(this.label19);
@@ -709,16 +716,16 @@
             this.lendsTab.Text = "LENDS";
             this.lendsTab.UseVisualStyleBackColor = true;
             // 
-            // refreshLendDataGridViewButton
+            // refreshLendsDataGridViewButton
             // 
-            this.refreshLendDataGridViewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.refreshLendDataGridViewButton.Location = new System.Drawing.Point(176, 13);
-            this.refreshLendDataGridViewButton.Name = "refreshLendDataGridViewButton";
-            this.refreshLendDataGridViewButton.Size = new System.Drawing.Size(100, 23);
-            this.refreshLendDataGridViewButton.TabIndex = 58;
-            this.refreshLendDataGridViewButton.Text = "refresh";
-            this.refreshLendDataGridViewButton.UseVisualStyleBackColor = true;
-            this.refreshLendDataGridViewButton.Click += new System.EventHandler(this.refreshLendDataGridViewButton_Click);
+            this.refreshLendsDataGridViewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshLendsDataGridViewButton.Location = new System.Drawing.Point(176, 13);
+            this.refreshLendsDataGridViewButton.Name = "refreshLendsDataGridViewButton";
+            this.refreshLendsDataGridViewButton.Size = new System.Drawing.Size(100, 23);
+            this.refreshLendsDataGridViewButton.TabIndex = 58;
+            this.refreshLendsDataGridViewButton.Text = "refresh";
+            this.refreshLendsDataGridViewButton.UseVisualStyleBackColor = true;
+            this.refreshLendsDataGridViewButton.Click += new System.EventHandler(this.refreshLendDataGridViewButton_Click);
             // 
             // label18
             // 
@@ -959,6 +966,7 @@
             // 
             // publishersTab
             // 
+            this.publishersTab.Controls.Add(this.refreshPublishersDataGridViewButton);
             this.publishersTab.Controls.Add(this.label31);
             this.publishersTab.Controls.Add(this.label32);
             this.publishersTab.Controls.Add(this.publisherContactTextBox);
@@ -1152,6 +1160,7 @@
             // 
             // subscribersTab
             // 
+            this.subscribersTab.Controls.Add(this.refreshSubscribersDataGridViewButton);
             this.subscribersTab.Controls.Add(this.label30);
             this.subscribersTab.Controls.Add(this.subscriberEmailTextBox);
             this.subscribersTab.Controls.Add(this.label38);
@@ -1370,6 +1379,7 @@
             // 
             // workersTab
             // 
+            this.workersTab.Controls.Add(this.refreshWorkersDataGridViewButton);
             this.workersTab.Controls.Add(this.label17);
             this.workersTab.Controls.Add(this.label28);
             this.workersTab.Controls.Add(this.workerStartDateTextBox);
@@ -1685,6 +1695,61 @@
             // 
             this.workersTableAdapter.ClearBeforeFill = true;
             // 
+            // refreshAuthorsDataGridViewButton
+            // 
+            this.refreshAuthorsDataGridViewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshAuthorsDataGridViewButton.Location = new System.Drawing.Point(176, 13);
+            this.refreshAuthorsDataGridViewButton.Name = "refreshAuthorsDataGridViewButton";
+            this.refreshAuthorsDataGridViewButton.Size = new System.Drawing.Size(100, 23);
+            this.refreshAuthorsDataGridViewButton.TabIndex = 13;
+            this.refreshAuthorsDataGridViewButton.Text = "refresh";
+            this.refreshAuthorsDataGridViewButton.UseVisualStyleBackColor = true;
+            this.refreshAuthorsDataGridViewButton.Click += new System.EventHandler(this.refreshAuthorsDataGridViewButton_Click);
+            // 
+            // refreshItemsDataGridViewButton
+            // 
+            this.refreshItemsDataGridViewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshItemsDataGridViewButton.Location = new System.Drawing.Point(176, 13);
+            this.refreshItemsDataGridViewButton.Name = "refreshItemsDataGridViewButton";
+            this.refreshItemsDataGridViewButton.Size = new System.Drawing.Size(100, 23);
+            this.refreshItemsDataGridViewButton.TabIndex = 36;
+            this.refreshItemsDataGridViewButton.Text = "refresh";
+            this.refreshItemsDataGridViewButton.UseVisualStyleBackColor = true;
+            this.refreshItemsDataGridViewButton.Click += new System.EventHandler(this.refreshItemsDataGridViewButton_Click);
+            // 
+            // refreshPublishersDataGridViewButton
+            // 
+            this.refreshPublishersDataGridViewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshPublishersDataGridViewButton.Location = new System.Drawing.Point(176, 13);
+            this.refreshPublishersDataGridViewButton.Name = "refreshPublishersDataGridViewButton";
+            this.refreshPublishersDataGridViewButton.Size = new System.Drawing.Size(100, 23);
+            this.refreshPublishersDataGridViewButton.TabIndex = 51;
+            this.refreshPublishersDataGridViewButton.Text = "refresh";
+            this.refreshPublishersDataGridViewButton.UseVisualStyleBackColor = true;
+            this.refreshPublishersDataGridViewButton.Click += new System.EventHandler(this.refreshPublishersDataGridViewButton_Click);
+            // 
+            // refreshSubscribersDataGridViewButton
+            // 
+            this.refreshSubscribersDataGridViewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshSubscribersDataGridViewButton.Location = new System.Drawing.Point(176, 13);
+            this.refreshSubscribersDataGridViewButton.Name = "refreshSubscribersDataGridViewButton";
+            this.refreshSubscribersDataGridViewButton.Size = new System.Drawing.Size(100, 23);
+            this.refreshSubscribersDataGridViewButton.TabIndex = 54;
+            this.refreshSubscribersDataGridViewButton.Text = "refresh";
+            this.refreshSubscribersDataGridViewButton.UseVisualStyleBackColor = true;
+            this.refreshSubscribersDataGridViewButton.Click += new System.EventHandler(this.refreshSubscribersDataGridViewButton_Click);
+            // 
+            // refreshWorkersDataGridViewButton
+            // 
+            this.refreshWorkersDataGridViewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshWorkersDataGridViewButton.Location = new System.Drawing.Point(176, 13);
+            this.refreshWorkersDataGridViewButton.Name = "refreshWorkersDataGridViewButton";
+            this.refreshWorkersDataGridViewButton.Size = new System.Drawing.Size(100, 23);
+            this.refreshWorkersDataGridViewButton.TabIndex = 59;
+            this.refreshWorkersDataGridViewButton.Text = "refresh";
+            this.refreshWorkersDataGridViewButton.UseVisualStyleBackColor = true;
+            this.refreshWorkersDataGridViewButton.Click += new System.EventHandler(this.refreshWorkersDataGridViewButton_Click);
+            // 
             // DatabaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1894,6 +1959,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn workerPhoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn workerStartDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox workerRankTextBox;
-        private System.Windows.Forms.Button refreshLendDataGridViewButton;
+        private System.Windows.Forms.Button refreshLendsDataGridViewButton;
+        private System.Windows.Forms.Button refreshAuthorsDataGridViewButton;
+        private System.Windows.Forms.Button refreshItemsDataGridViewButton;
+        private System.Windows.Forms.Button refreshPublishersDataGridViewButton;
+        private System.Windows.Forms.Button refreshSubscribersDataGridViewButton;
+        private System.Windows.Forms.Button refreshWorkersDataGridViewButton;
     }
 }

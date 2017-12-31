@@ -30,6 +30,8 @@ namespace publicLibrary
         {
             InitializeComponent();
 
+            #region TEXTBOX ARRAYS INITIALIZATION
+
             authorsInput[0] = authorIdTextBox;
             authorsInput[1] = authorNameTextBox;
 
@@ -69,6 +71,7 @@ namespace publicLibrary
             workersInput[5] = workerEmailTextBox;
             workersInput[6] = workerPhoneTextBox;
             workersInput[7] = workerStartDateTextBox;
+            #endregion
         }
 
         private void DatabaseForm_Load(object sender, EventArgs e)
@@ -136,6 +139,10 @@ namespace publicLibrary
         #endregion
 
         #region AUTHORS
+        private void refreshAuthorsDataGridViewButton_Click(object sender, EventArgs e)
+        {
+            authorsRefreshDataGridView();
+        }
         // add/update
         private void authorsSubmit1_Click(object sender, EventArgs e)
         {
@@ -166,6 +173,10 @@ namespace publicLibrary
         #endregion
 
         #region ITEMS
+        private void refreshItemsDataGridViewButton_Click(object sender, EventArgs e)
+        {
+            itemsRefreshDataGridView();
+        }
         // add/update
         private void itemsSubmit1_Click(object sender, EventArgs e)
         {
@@ -234,6 +245,10 @@ namespace publicLibrary
             TextBoxLeave(lends, lendsInput[0], lendsInput);
         }
 
+        private void refreshLendDataGridViewButton_Click(object sender, EventArgs e)
+        {
+            lendsRefreshDataGridView();
+        }
         #endregion
 
         #region PUBLISHERS
@@ -266,6 +281,10 @@ namespace publicLibrary
             TextBoxLeave(publishers, publishersInput[0], publishersInput);
         }
 
+        private void refreshPublishersDataGridViewButton_Click(object sender, EventArgs e)
+        {
+            publishersRefreshDataGridView();
+        }
         #endregion
 
         #region SUBSCRIBERS
@@ -289,7 +308,7 @@ namespace publicLibrary
             subscribersRefreshDataGridView();
         }
         // refresh grid
-        public void subscribersRefreshDataGridView ()
+        public void subscribersRefreshDataGridView()
         {
             subscribersDataGridView.DataSource = subscribers.GetAllRecord("SUBSCRIBERS").Tables[0];
         }
@@ -299,6 +318,10 @@ namespace publicLibrary
             TextBoxLeave(subscribers, subscribersInput[0], subscribersInput);
         }
 
+        private void refreshSubscribersDataGridViewButton_Click(object sender, EventArgs e)
+        {
+            subscribersRefreshDataGridView();
+        }
         #endregion
 
         #region WORKERS 
@@ -335,11 +358,11 @@ namespace publicLibrary
             TextBoxLeave(workers, workersInput[0], workersInput);
         }
 
+        private void refreshWorkersDataGridViewButton_Click(object sender, EventArgs e)
+        {
+            workersRefreshDataGridView();
+        }
         #endregion
 
-        private void refreshLendDataGridViewButton_Click(object sender, EventArgs e)
-        {
-            lendsRefreshDataGridView();
-        }
     }
 }

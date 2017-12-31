@@ -27,6 +27,21 @@ namespace publicLibrary
             lendsList = new List<Lend>();
         }
 
+        private void WorkForm_Shown(object sender, EventArgs e)
+        {
+            workerNameTextBox.Text = User.Name;
+        }
+
+        private void WorkForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'libraryDatabaseDataSet.Lends' table. You can move, or remove it, as needed.
+            this.lendsTableAdapter.Fill(this.libraryDatabaseDataSet.Lends);
+
+            DataSetToListView(lends.GetAllRecord("LENDS"));
+        }
+
+        #region ADD LEND
+
         private void addBookButton_Click(object sender, EventArgs e)
         {
             if (items.Found(itemNameTextBox.Text))
@@ -104,18 +119,9 @@ namespace publicLibrary
 
         }
 
-        private void WorkForm_Shown(object sender, EventArgs e)
-        {
-            workerNameTextBox.Text = User.Name;
-        }
+        #endregion
 
-        private void WorkForm_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'libraryDatabaseDataSet.Lends' table. You can move, or remove it, as needed.
-            this.lendsTableAdapter.Fill(this.libraryDatabaseDataSet.Lends);
-
-            DataSetToListView(lends.GetAllRecord("LENDS"));
-        }
+        #region LENDS
 
         private void searchByLabel_Click(object sender, EventArgs e)
         {
@@ -138,7 +144,7 @@ namespace publicLibrary
             }
         }
 
-        private void DataSetToListView (DataSet ds)
+        private void DataSetToListView(DataSet ds)
         {
             // TODO: sort dt by date
             DataTable dt = ds.Tables[0];
@@ -156,7 +162,7 @@ namespace publicLibrary
                 lvis.Add(lvi);
             }
 
-            lendsListViewRefreshButton_Click(null,null);
+            lendsListViewRefreshButton_Click(null, null);
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -190,7 +196,7 @@ namespace publicLibrary
             }
         }
 
-        public List<ListViewItem> SortListViewItemsByDate (List<ListViewItem> litems)
+        public List<ListViewItem> SortListViewItemsByDate(List<ListViewItem> litems)
         {
             ListViewItem temp;
             List<ListViewItem> temps = litems;
@@ -229,7 +235,7 @@ namespace publicLibrary
             // DOTO: return every lend that has been marked to the library
             List<ListViewItem> lvitems = new List<ListViewItem>();
 
-            for (int i =0; i < lendsListView.Items.Count; i++)
+            for (int i = 0; i < lendsListView.Items.Count; i++)
             {
                 if (lendsListView.Items[i].Checked == true)
                 {
@@ -247,13 +253,15 @@ namespace publicLibrary
                 items.UpdateStock(int.Parse(items.GetInfo(item.SubItems[1].Text).Tables[0].Rows[0][0].ToString()), int.Parse(item.SubItems[2].Text));
                 // remove entry from lends table
                 lends.Remove(
-                    int.Parse(items.GetInfo(item.SubItems[1].Text).Tables[0].Rows[0][0].ToString()), 
+                    int.Parse(items.GetInfo(item.SubItems[1].Text).Tables[0].Rows[0][0].ToString()),
                     int.Parse(subscribers.GetInfo(item.SubItems[3].Text).Tables[0].Rows[0][0].ToString()),
                     int.Parse(item.SubItems[2].Text)
                     );
             }
             lendsListViewRefreshButton_Click(null, null);
         }
+
+        #endregion
 
         private void lendsListView_SelectedIndexChanged(object sender, EventArgs e)
         {
