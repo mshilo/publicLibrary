@@ -130,17 +130,17 @@ namespace publicLibrary
 
         private void searchComboBox_TextChanged(object sender, EventArgs e)
         {
-            if (searchComboBox.Text != "" && searchComboBox.Items.Contains(searchComboBox.Text))
+            if (lendsSearchComboBox.Text != "" && lendsSearchComboBox.Items.Contains(lendsSearchComboBox.Text))
             {
-                searchByLabel.Text = searchComboBox.Text + ":";
-                searchInput.Enabled = true;
-                searchButton.Enabled = true;
+                lendsSearchByLabel.Text = lendsSearchComboBox.Text + ":";
+                lendsSearchInput.Enabled = true;
+                lendsSearchButton.Enabled = true;
             }
             else
             {
-                searchByLabel.Text = "";
-                searchInput.Enabled = false;
-                searchButton.Enabled = false;
+                lendsSearchByLabel.Text = "";
+                lendsSearchInput.Enabled = false;
+                lendsSearchButton.Enabled = false;
             }
         }
 
@@ -167,11 +167,11 @@ namespace publicLibrary
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            string searchString = searchInput.Text;
+            string searchString = lendsSearchInput.Text;
             string sql = "";
             int id = 0;
 
-            switch (searchComboBox.Text)
+            switch (lendsSearchComboBox.Text)
             {
                 case "item":
                     sql = string.Format("SELECT * FROM Items WHERE itemName='{0}'", searchString);
