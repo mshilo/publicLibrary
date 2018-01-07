@@ -35,7 +35,7 @@ namespace publicLibrary
 
         public override bool Found(string name)
         {
-            return false;
+            return (0 != GetInfo(name).Tables[0].Rows.Count);
         }
 
         public override DataSet GetInfo(int id)
@@ -48,7 +48,10 @@ namespace publicLibrary
 
         public override DataSet GetInfo(string name)
         {
-            return new DataSet();
+            DataSet ds = new DataSet();
+            string sql = string.Format("SELECT * FROM Authors WHERE authorName='{0}'", name);
+            ds = GetQuery(sql);
+            return ds;
         }
     }
 }

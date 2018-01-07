@@ -270,6 +270,7 @@ namespace publicLibrary
 
         private void button3_Click(object sender, EventArgs e)
         {
+            booksDataGridView.DataSource = null;
             string searchString = "";
             string sql = "";
             DataSet temp;
@@ -278,24 +279,33 @@ namespace publicLibrary
             {
                 case "name":
                     searchString = booksSearchInput.Text;
+                    UpdateBooksDataGridView(items.GetInfo(searchString));
                     break;
 
                 case "publisher":
                     if (publishers.Found(booksSearchInput.Text))
+                    {
                         temp = publishers.GetInfo(booksSearchInput.Text);
+                        UpdateBooksDataGridView(items.GetInfoByPublisher((int)temp.Tables[0].Rows[0].ItemArray[0]));
+                    }
                     break;
 
                 case "author":
                     if (authors.Found(booksSearchInput.Text))
+                    {
                         temp = authors.GetInfo(booksSearchInput.Text);
+                        UpdateBooksDataGridView(items.GetInfoByAuthor((int)temp.Tables[0].Rows[0][0]));
+                    }
                     break;
 
                 case "genre":
                     searchString = booksSearchInput.Text;
+                    UpdateBooksDataGridView(items.GetInfoByGenre(searchString));
                     break;
 
                 case "language":
                     searchString = booksSearchInput.Text;
+                    UpdateBooksDataGridView(items.GetInfoByGenre(searchString));
                     break;
 
                 default:
@@ -305,7 +315,62 @@ namespace publicLibrary
 
         private void UpdateBooksDataGridView (DataSet ds)
         {
+            DataTable d1 = ds.Tables[0];
+            DataTable d2 = new DataTable();
 
+            DataRow row;
+
+            DataColumn column = new DataColumn();
+            column.DataType = Type.GetType("System.Int32");
+            column.ColumnName = "id";
+            d2.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = Type.GetType("System.String");
+            column.ColumnName = "name";
+            d2.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = Type.GetType("System.Int32");
+            column.ColumnName = "count";
+            d2.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = Type.GetType("System.String");
+            column.ColumnName = "publisher";
+            d2.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = Type.GetType("System.String");
+            column.ColumnName = "author";
+            d2.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = Type.GetType("System.String");
+            column.ColumnName = "genre";
+            d2.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = Type.GetType("System.String");
+            column.ColumnName = "language";
+            d2.Columns.Add(column);
+
+            foreach (DataRow i in d1.Rows)
+            {
+                row = d2.NewRow();
+                row["id"]        = (int)i[0];
+                row["name"]      = (string)i[1];
+                row["count"]     = (int)i[2];
+                row["publisher"] = (string)publishers.GetInfo((int)i[4]).Tables[0].Rows[0][1];
+                row["author"]    = (string)authors.GetInfo((int)i[5]).Tables[0].Rows[0][1];
+                row["genre"]     = (string)i[6];
+                row["language"]  = (string)i[7];
+                d2.Rows.Add(row);
+            }
+
+
+            booksDataGridView.DataSource = d2;
+            booksDataGridView.Refresh();
         }
 
         private void lendsSearchComboBox_SelectedIndexChanged(object sender, EventArgs e)

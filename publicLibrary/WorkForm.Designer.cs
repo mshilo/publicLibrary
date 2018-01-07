@@ -68,13 +68,6 @@
             this.endDateColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.BOOKS = new System.Windows.Forms.TabPage();
             this.booksDataGridView = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.publisher = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.author = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.language = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.booksDataGridViewUpdateButton = new System.Windows.Forms.Button();
             this.booksDataGridViewRefreshButton = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -457,69 +450,15 @@
             // 
             // booksDataGridView
             // 
+            this.booksDataGridView.AllowUserToAddRows = false;
+            this.booksDataGridView.AllowUserToDeleteRows = false;
             this.booksDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.booksDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.booksDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.name,
-            this.count,
-            this.publisher,
-            this.author,
-            this.genre,
-            this.language});
             this.booksDataGridView.Location = new System.Drawing.Point(292, 67);
             this.booksDataGridView.Name = "booksDataGridView";
+            this.booksDataGridView.ReadOnly = true;
             this.booksDataGridView.Size = new System.Drawing.Size(634, 204);
             this.booksDataGridView.TabIndex = 8;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "id";
-            this.id.MinimumWidth = 30;
-            this.id.Name = "id";
-            this.id.Width = 30;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "name";
-            this.name.MinimumWidth = 120;
-            this.name.Name = "name";
-            this.name.Width = 120;
-            // 
-            // count
-            // 
-            this.count.HeaderText = "count";
-            this.count.MinimumWidth = 30;
-            this.count.Name = "count";
-            this.count.Width = 50;
-            // 
-            // publisher
-            // 
-            this.publisher.HeaderText = "publisher";
-            this.publisher.MinimumWidth = 120;
-            this.publisher.Name = "publisher";
-            this.publisher.Width = 120;
-            // 
-            // author
-            // 
-            this.author.HeaderText = "author";
-            this.author.MinimumWidth = 120;
-            this.author.Name = "author";
-            this.author.Width = 120;
-            // 
-            // genre
-            // 
-            this.genre.HeaderText = "genre";
-            this.genre.MinimumWidth = 30;
-            this.genre.Name = "genre";
-            this.genre.Width = 80;
-            // 
-            // language
-            // 
-            this.language.HeaderText = "language";
-            this.language.MinimumWidth = 30;
-            this.language.Name = "language";
-            this.language.Width = 70;
             // 
             // booksDataGridViewUpdateButton
             // 
@@ -700,13 +639,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.TabPage BOOKS;
         private System.Windows.Forms.DataGridView booksDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn count;
-        private System.Windows.Forms.DataGridViewTextBoxColumn publisher;
-        private System.Windows.Forms.DataGridViewTextBoxColumn author;
-        private System.Windows.Forms.DataGridViewTextBoxColumn genre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn language;
         private System.Windows.Forms.Button booksDataGridViewUpdateButton;
         private System.Windows.Forms.Button booksDataGridViewRefreshButton;
         private System.Windows.Forms.Panel panel4;

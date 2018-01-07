@@ -48,10 +48,42 @@ namespace publicLibrary
             return ds;
         }
 
+        public DataSet GetInfoByAuthor(int id)
+        {
+            DataSet ds = new DataSet();
+            string sql = string.Format("SELECT * FROM Items WHERE authorId={0}", id);
+            ds = GetQuery(sql);
+            return ds;
+        }
+
+        public DataSet GetInfoByPublisher(int id)
+        {
+            DataSet ds = new DataSet();
+            string sql = string.Format("SELECT * FROM Items WHERE publisherId={0}", id);
+            ds = GetQuery(sql);
+            return ds;
+        }
+
+        public DataSet GetInfoByGenre(string s)
+        {
+            DataSet ds = new DataSet();
+            string sql = string.Format("SELECT * FROM Items WHERE itemGenre='{0}'", s);
+            ds = GetQuery(sql);
+            return ds;
+        }
+
+        public DataSet GetInfoByLanguage(string s)
+        {
+            DataSet ds = new DataSet();
+            string sql = string.Format("SELECT * FROM Items WHERE itemLanguage='{0}'", s);
+            ds = GetQuery(sql);
+            return ds;
+        }
+
         public override DataSet GetInfo(string name)
         {
             DataSet ds = new DataSet();
-            string sql = string.Format("SELECT * FROM Items WHERE itemName='{0}'", name);
+            string sql = string.Format("SELECT * FROM Items WHERE itemName LIKE '%{0}%'", name);
             ds = GetQuery(sql);
             return ds;
         }

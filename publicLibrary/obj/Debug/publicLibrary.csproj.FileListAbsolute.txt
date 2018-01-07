@@ -67,3 +67,22 @@ C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibra
 C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibrary.MainForm.en.resources
 C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\obj\Debug\bn\publicLibrary.resources.dll
 C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\obj\Debug\en\publicLibrary.resources.dll
+C:\Users\Max\Documents\publicLibrary\publicLibrary\bin\Debug\access\LibraryDatabase.accdb
+C:\Users\Max\Documents\publicLibrary\publicLibrary\bin\Debug\publicLibrary.exe.config
+C:\Users\Max\Documents\publicLibrary\publicLibrary\bin\Debug\publicLibrary.exe
+C:\Users\Max\Documents\publicLibrary\publicLibrary\bin\Debug\publicLibrary.pdb
+C:\Users\Max\Documents\publicLibrary\publicLibrary\bin\Debug\bn\publicLibrary.resources.dll
+C:\Users\Max\Documents\publicLibrary\publicLibrary\bin\Debug\en\publicLibrary.resources.dll
+C:\Users\Max\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Max\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibrary.DatabaseForm.resources
+C:\Users\Max\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibrary.MainForm.resources
+C:\Users\Max\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibrary.Properties.Resources.resources
+C:\Users\Max\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibrary.WorkForm.resources
+C:\Users\Max\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibrary.MainForm.bn.resources
+C:\Users\Max\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibrary.MainForm.en.resources
+C:\Users\Max\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibrary.csproj.GenerateResource.Cache
+C:\Users\Max\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Max\Documents\publicLibrary\publicLibrary\obj\Debug\bn\publicLibrary.resources.dll
+C:\Users\Max\Documents\publicLibrary\publicLibrary\obj\Debug\en\publicLibrary.resources.dll
+C:\Users\Max\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibrary.exe
+C:\Users\Max\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibrary.pdb
