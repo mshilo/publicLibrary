@@ -61,3 +61,9 @@ F:\Programming\publicLibrary\publicLibrary\obj\Debug\publicLibrary.MainForm.bn.r
 F:\Programming\publicLibrary\publicLibrary\obj\Debug\publicLibrary.MainForm.en.resources
 F:\Programming\publicLibrary\publicLibrary\obj\Debug\bn\publicLibrary.resources.dll
 F:\Programming\publicLibrary\publicLibrary\obj\Debug\en\publicLibrary.resources.dll
+C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\bin\Debug\bn\publicLibrary.resources.dll
+C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\bin\Debug\en\publicLibrary.resources.dll
+C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibrary.MainForm.bn.resources
+C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\obj\Debug\publicLibrary.MainForm.en.resources
+C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\obj\Debug\bn\publicLibrary.resources.dll
+C:\Users\Maxim Shilo\Documents\publicLibrary\publicLibrary\obj\Debug\en\publicLibrary.resources.dll

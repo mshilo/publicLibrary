@@ -61,24 +61,13 @@
             this.lendsSearchByLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lendsListView = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.itemNameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.quantityColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.subscriberNameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.endDateColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.libraryDatabaseDataSet = new publicLibrary.LibraryDatabaseDataSet();
-            this.lendsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lendsTableAdapter = new publicLibrary.LibraryDatabaseDataSetTableAdapters.LendsTableAdapter();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.BOOKS = new System.Windows.Forms.TabPage();
-            this.booksDataGridViewUpdateButton = new System.Windows.Forms.Button();
-            this.booksDataGridViewRefreshButton = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.booksDataGridView = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,17 +75,28 @@
             this.author = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.language = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.booksDataGridViewUpdateButton = new System.Windows.Forms.Button();
+            this.booksDataGridViewRefreshButton = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.booksSearchButton = new System.Windows.Forms.Button();
+            this.booksSearchComboBox = new System.Windows.Forms.ComboBox();
+            this.booksSearchInput = new System.Windows.Forms.TextBox();
+            this.booksSearchByLabel = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.libraryDatabaseDataSet = new publicLibrary.LibraryDatabaseDataSet();
+            this.lendsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lendsTableAdapter = new publicLibrary.LibraryDatabaseDataSetTableAdapters.LendsTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.BOOKS.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.booksDataGridView)).BeginInit();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lendsBindingSource)).BeginInit();
-            this.BOOKS.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -367,6 +367,7 @@
             this.lendsSearchComboBox.Name = "lendsSearchComboBox";
             this.lendsSearchComboBox.Size = new System.Drawing.Size(121, 21);
             this.lendsSearchComboBox.TabIndex = 4;
+            this.lendsSearchComboBox.SelectedIndexChanged += new System.EventHandler(this.lendsSearchComboBox_SelectedIndexChanged);
             this.lendsSearchComboBox.TextChanged += new System.EventHandler(this.searchComboBox_TextChanged);
             // 
             // lendsSearchInput
@@ -415,6 +416,11 @@
             this.lendsListView.View = System.Windows.Forms.View.Details;
             this.lendsListView.SelectedIndexChanged += new System.EventHandler(this.lendsListView_SelectedIndexChanged);
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "";
+            this.columnHeader1.Width = 19;
+            // 
             // itemNameColumn
             // 
             this.itemNameColumn.Text = "item name";
@@ -435,28 +441,9 @@
             this.endDateColumn.Text = "end date";
             this.endDateColumn.Width = 222;
             // 
-            // libraryDatabaseDataSet
-            // 
-            this.libraryDatabaseDataSet.DataSetName = "LibraryDatabaseDataSet";
-            this.libraryDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lendsBindingSource
-            // 
-            this.lendsBindingSource.DataMember = "Lends";
-            this.lendsBindingSource.DataSource = this.libraryDatabaseDataSet;
-            // 
-            // lendsTableAdapter
-            // 
-            this.lendsTableAdapter.ClearBeforeFill = true;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "";
-            this.columnHeader1.Width = 19;
-            // 
             // BOOKS
             // 
-            this.BOOKS.Controls.Add(this.dataGridView1);
+            this.BOOKS.Controls.Add(this.booksDataGridView);
             this.BOOKS.Controls.Add(this.booksDataGridViewUpdateButton);
             this.BOOKS.Controls.Add(this.booksDataGridViewRefreshButton);
             this.BOOKS.Controls.Add(this.panel4);
@@ -468,94 +455,11 @@
             this.BOOKS.Text = "BOOKS";
             this.BOOKS.UseVisualStyleBackColor = true;
             // 
-            // booksDataGridViewUpdateButton
+            // booksDataGridView
             // 
-            this.booksDataGridViewUpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.booksDataGridViewUpdateButton.Location = new System.Drawing.Point(211, 248);
-            this.booksDataGridViewUpdateButton.Name = "booksDataGridViewUpdateButton";
-            this.booksDataGridViewUpdateButton.Size = new System.Drawing.Size(75, 23);
-            this.booksDataGridViewUpdateButton.TabIndex = 7;
-            this.booksDataGridViewUpdateButton.Text = "update";
-            this.booksDataGridViewUpdateButton.UseVisualStyleBackColor = true;
-            // 
-            // booksDataGridViewRefreshButton
-            // 
-            this.booksDataGridViewRefreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.booksDataGridViewRefreshButton.Location = new System.Drawing.Point(211, 67);
-            this.booksDataGridViewRefreshButton.Name = "booksDataGridViewRefreshButton";
-            this.booksDataGridViewRefreshButton.Size = new System.Drawing.Size(75, 23);
-            this.booksDataGridViewRefreshButton.TabIndex = 6;
-            this.booksDataGridViewRefreshButton.Text = "refresh";
-            this.booksDataGridViewRefreshButton.UseVisualStyleBackColor = true;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel4.Controls.Add(this.button3);
-            this.panel4.Controls.Add(this.comboBox1);
-            this.panel4.Controls.Add(this.textBox1);
-            this.panel4.Controls.Add(this.label8);
-            this.panel4.Controls.Add(this.label9);
-            this.panel4.Location = new System.Drawing.Point(47, 96);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(239, 107);
-            this.panel4.TabIndex = 5;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Enabled = false;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(103, 70);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(121, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "search";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "item",
-            "subscriber ",
-            "end date\t"});
-            this.comboBox1.Location = new System.Drawing.Point(103, 15);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 4;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(103, 44);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 3;
-            // 
-            // label8
-            // 
-            this.label8.Location = new System.Drawing.Point(19, 47);
-            this.label8.Name = "label8";
-            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label8.Size = new System.Drawing.Size(78, 13);
-            this.label8.TabIndex = 2;
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(41, 18);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(56, 13);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "search by:";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.booksDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.booksDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.booksDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.name,
             this.count,
@@ -563,10 +467,10 @@
             this.author,
             this.genre,
             this.language});
-            this.dataGridView1.Location = new System.Drawing.Point(292, 67);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(634, 204);
-            this.dataGridView1.TabIndex = 8;
+            this.booksDataGridView.Location = new System.Drawing.Point(292, 67);
+            this.booksDataGridView.Name = "booksDataGridView";
+            this.booksDataGridView.Size = new System.Drawing.Size(634, 204);
+            this.booksDataGridView.TabIndex = 8;
             // 
             // id
             // 
@@ -617,6 +521,108 @@
             this.language.Name = "language";
             this.language.Width = 70;
             // 
+            // booksDataGridViewUpdateButton
+            // 
+            this.booksDataGridViewUpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.booksDataGridViewUpdateButton.Location = new System.Drawing.Point(211, 248);
+            this.booksDataGridViewUpdateButton.Name = "booksDataGridViewUpdateButton";
+            this.booksDataGridViewUpdateButton.Size = new System.Drawing.Size(75, 23);
+            this.booksDataGridViewUpdateButton.TabIndex = 7;
+            this.booksDataGridViewUpdateButton.Text = "update";
+            this.booksDataGridViewUpdateButton.UseVisualStyleBackColor = true;
+            // 
+            // booksDataGridViewRefreshButton
+            // 
+            this.booksDataGridViewRefreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.booksDataGridViewRefreshButton.Location = new System.Drawing.Point(211, 67);
+            this.booksDataGridViewRefreshButton.Name = "booksDataGridViewRefreshButton";
+            this.booksDataGridViewRefreshButton.Size = new System.Drawing.Size(75, 23);
+            this.booksDataGridViewRefreshButton.TabIndex = 6;
+            this.booksDataGridViewRefreshButton.Text = "refresh";
+            this.booksDataGridViewRefreshButton.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel4.Controls.Add(this.booksSearchButton);
+            this.panel4.Controls.Add(this.booksSearchComboBox);
+            this.panel4.Controls.Add(this.booksSearchInput);
+            this.panel4.Controls.Add(this.booksSearchByLabel);
+            this.panel4.Controls.Add(this.label9);
+            this.panel4.Location = new System.Drawing.Point(47, 96);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(239, 107);
+            this.panel4.TabIndex = 5;
+            // 
+            // booksSearchButton
+            // 
+            this.booksSearchButton.BackColor = System.Drawing.Color.White;
+            this.booksSearchButton.Enabled = false;
+            this.booksSearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.booksSearchButton.Location = new System.Drawing.Point(103, 70);
+            this.booksSearchButton.Name = "booksSearchButton";
+            this.booksSearchButton.Size = new System.Drawing.Size(121, 23);
+            this.booksSearchButton.TabIndex = 3;
+            this.booksSearchButton.Text = "search";
+            this.booksSearchButton.UseVisualStyleBackColor = false;
+            this.booksSearchButton.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // booksSearchComboBox
+            // 
+            this.booksSearchComboBox.FormattingEnabled = true;
+            this.booksSearchComboBox.Items.AddRange(new object[] {
+            "name",
+            "publisher",
+            "author",
+            "genre",
+            "language"});
+            this.booksSearchComboBox.Location = new System.Drawing.Point(103, 15);
+            this.booksSearchComboBox.Name = "booksSearchComboBox";
+            this.booksSearchComboBox.Size = new System.Drawing.Size(121, 21);
+            this.booksSearchComboBox.TabIndex = 4;
+            this.booksSearchComboBox.TextChanged += new System.EventHandler(this.booksSearchComboBox_TextChanged);
+            // 
+            // booksSearchInput
+            // 
+            this.booksSearchInput.Enabled = false;
+            this.booksSearchInput.Location = new System.Drawing.Point(103, 44);
+            this.booksSearchInput.Name = "booksSearchInput";
+            this.booksSearchInput.Size = new System.Drawing.Size(121, 20);
+            this.booksSearchInput.TabIndex = 3;
+            this.booksSearchInput.TextChanged += new System.EventHandler(this.button3_Click);
+            // 
+            // booksSearchByLabel
+            // 
+            this.booksSearchByLabel.Location = new System.Drawing.Point(19, 47);
+            this.booksSearchByLabel.Name = "booksSearchByLabel";
+            this.booksSearchByLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.booksSearchByLabel.Size = new System.Drawing.Size(78, 13);
+            this.booksSearchByLabel.TabIndex = 2;
+            this.booksSearchByLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(41, 18);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(56, 13);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "search by:";
+            // 
+            // libraryDatabaseDataSet
+            // 
+            this.libraryDatabaseDataSet.DataSetName = "LibraryDatabaseDataSet";
+            this.libraryDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lendsBindingSource
+            // 
+            this.lendsBindingSource.DataMember = "Lends";
+            this.lendsBindingSource.DataSource = this.libraryDatabaseDataSet;
+            // 
+            // lendsTableAdapter
+            // 
+            this.lendsTableAdapter.ClearBeforeFill = true;
+            // 
             // WorkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -641,12 +647,12 @@
             this.tabPage2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDatabaseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lendsBindingSource)).EndInit();
             this.BOOKS.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.booksDataGridView)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lendsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -693,7 +699,7 @@
         private System.Windows.Forms.Button updateLendList;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.TabPage BOOKS;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView booksDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn count;
@@ -704,10 +710,10 @@
         private System.Windows.Forms.Button booksDataGridViewUpdateButton;
         private System.Windows.Forms.Button booksDataGridViewRefreshButton;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button booksSearchButton;
+        private System.Windows.Forms.ComboBox booksSearchComboBox;
+        private System.Windows.Forms.TextBox booksSearchInput;
+        private System.Windows.Forms.Label booksSearchByLabel;
         private System.Windows.Forms.Label label9;
     }
 }

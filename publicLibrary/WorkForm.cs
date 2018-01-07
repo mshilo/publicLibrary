@@ -17,6 +17,8 @@ namespace publicLibrary
         DbWorkers workers = new DbWorkers();
         DbSubscribers subscribers = new DbSubscribers();
         DbLends lends = new DbLends();
+        DbPublishers publishers = new DbPublishers();
+        DbAuthors authors = new DbAuthors();
 
         List<Lend> lendsList;
         List<ListViewItem> lvis;
@@ -146,7 +148,6 @@ namespace publicLibrary
 
         private void DataSetToListView(DataSet ds)
         {
-            // TODO: sort dt by date
             DataTable dt = ds.Tables[0];
             lvis = new List<ListViewItem>();
             ListViewItem lvi;
@@ -232,7 +233,6 @@ namespace publicLibrary
 
         private void updateLendList_Click(object sender, EventArgs e)
         {
-            // DOTO: return every lend that has been marked to the library
             List<ListViewItem> lvitems = new List<ListViewItem>();
 
             for (int i = 0; i < lendsListView.Items.Count; i++)
@@ -266,6 +266,67 @@ namespace publicLibrary
         private void lendsListView_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string searchString = "";
+            string sql = "";
+            DataSet temp;
+
+            switch (booksSearchComboBox.Text)
+            {
+                case "name":
+                    searchString = booksSearchInput.Text;
+                    break;
+
+                case "publisher":
+                    if (publishers.Found(booksSearchInput.Text))
+                        temp = publishers.GetInfo(booksSearchInput.Text);
+                    break;
+
+                case "author":
+                    if (authors.Found(booksSearchInput.Text))
+                        temp = authors.GetInfo(booksSearchInput.Text);
+                    break;
+
+                case "genre":
+                    searchString = booksSearchInput.Text;
+                    break;
+
+                case "language":
+                    searchString = booksSearchInput.Text;
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        private void UpdateBooksDataGridView (DataSet ds)
+        {
+
+        }
+
+        private void lendsSearchComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void booksSearchComboBox_TextChanged(object sender, EventArgs e)
+        {
+            if (booksSearchComboBox.Text != "" && booksSearchComboBox.Items.Contains(booksSearchComboBox.Text))
+            {
+                booksSearchByLabel.Text = booksSearchComboBox.Text + ":";
+                booksSearchInput.Enabled = true;
+                booksSearchButton.Enabled = true;
+            }
+            else
+            {
+                booksSearchByLabel.Text = "";
+                booksSearchInput.Enabled = false;
+                booksSearchButton.Enabled = false;
+            }
         }
     }
 }
